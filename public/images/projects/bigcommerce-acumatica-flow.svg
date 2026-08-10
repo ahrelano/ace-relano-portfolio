@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual BigCommerce and Acumatica integration flow</title>
+  <desc id="desc">Architecture diagram with a storefront cart, event gateway, pricing logic, retry queue, and Acumatica ERP.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#101114" flood-opacity=".13"/></filter>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#c8c6bf"/></pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#1557ff"/></marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#77736b"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="#efede7"/>
+  <rect width="1600" height="1000" fill="url(#dots)" opacity=".75"/>
+  <rect x="0" y="0" width="1600" height="180" fill="#171717"/>
+  <text x="88" y="70" fill="#7ea0ff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">CONCEPTUAL INTEGRATION ARCHITECTURE • FICTIONAL EVENTS</text>
+  <text x="88" y="135" fill="#f3f0e9" font-family="Georgia, serif" font-size="48" font-weight="700">Make ownership explicit before moving data.</text>
+
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="88" y="280" width="340" height="460" rx="28" fill="#fbfaf7" stroke="#d2d0c8"/>
+    <rect x="88" y="280" width="340" height="78" rx="28" fill="#1557ff"/>
+    <path d="M88 330h340v28H88z" fill="#1557ff"/>
+    <text x="122" y="328" fill="white" font-size="18" font-weight="700">BigCommerce storefront</text>
+    <text x="122" y="405" fill="#77736b" font-size="12" font-weight="700" letter-spacing="1.5">CART EVENT</text>
+    <rect x="122" y="426" width="272" height="94" rx="16" fill="#f1efe9"/>
+    <text x="146" y="459" fill="#171717" font-size="14" font-weight="700">cart.updated</text>
+    <text x="146" y="484" fill="#77736b" font-size="12">event_demo_7F3A</text>
+    <rect x="304" y="447" width="66" height="28" rx="14" fill="#dfe7ff"/>
+    <text x="337" y="465" text-anchor="middle" fill="#1557ff" font-size="10" font-weight="700">QUEUED</text>
+    <text x="122" y="576" fill="#171717" font-size="14" font-weight="700">Needs</text>
+    <circle cx="128" cy="610" r="4" fill="#1557ff"/><text x="144" y="615" fill="#77736b" font-size="13">Customer class</text>
+    <circle cx="128" cy="642" r="4" fill="#1557ff"/><text x="144" y="647" fill="#77736b" font-size="13">Quantity break</text>
+    <circle cx="128" cy="674" r="4" fill="#1557ff"/><text x="144" y="679" fill="#77736b" font-size="13">Fallback price</text>
+  </g>
+
+  <path d="M448 418h128" fill="none" stroke="#1557ff" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="512" y="397" text-anchor="middle" fill="#1557ff" font-family="Arial, sans-serif" font-size="12" font-weight="700">WEBHOOK</text>
+  <path d="M576 617H448" fill="none" stroke="#77736b" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#arrowGray)"/>
+  <text x="512" y="643" text-anchor="middle" fill="#77736b" font-family="Arial, sans-serif" font-size="12" font-weight="700">PRICE RESPONSE</text>
+
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="598" y="234" width="410" height="578" rx="30" fill="#171717"/>
+    <text x="638" y="286" fill="#8eabff" font-size="12" font-weight="700" letter-spacing="1.7">INTEGRATION BOUNDARY</text>
+    <text x="638" y="325" fill="white" font-size="22" font-weight="700">Event + pricing service</text>
+    <rect x="638" y="370" width="330" height="86" rx="17" fill="#252629" stroke="#414247"/>
+    <circle cx="677" cy="413" r="18" fill="#1557ff"/>
+    <text x="677" y="419" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+    <text x="711" y="405" fill="white" font-size="14" font-weight="700">Verify + normalize event</text>
+    <text x="711" y="427" fill="#9d9da0" font-size="12">Signature, shape, idempotency</text>
+    <rect x="638" y="476" width="330" height="86" rx="17" fill="#252629" stroke="#414247"/>
+    <circle cx="677" cy="519" r="18" fill="#1557ff"/>
+    <text x="677" y="525" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+    <text x="711" y="511" fill="white" font-size="14" font-weight="700">Resolve pricing context</text>
+    <text x="711" y="533" fill="#9d9da0" font-size="12">Customer, item, quantity</text>
+    <rect x="638" y="582" width="330" height="86" rx="17" fill="#252629" stroke="#414247"/>
+    <circle cx="677" cy="625" r="18" fill="#1557ff"/>
+    <text x="677" y="631" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+    <text x="711" y="617" fill="white" font-size="14" font-weight="700">Return deterministic result</text>
+    <text x="711" y="639" fill="#9d9da0" font-size="12">Price, source, timestamp</text>
+    <rect x="638" y="704" width="156" height="64" rx="16" fill="#2d2e32"/>
+    <text x="658" y="732" fill="#a3a3a5" font-size="11" font-weight="700">RETRY QUEUE</text>
+    <text x="658" y="752" fill="white" font-size="13">0 pending</text>
+    <rect x="812" y="704" width="156" height="64" rx="16" fill="#2d2e32"/>
+    <text x="832" y="732" fill="#a3a3a5" font-size="11" font-weight="700">TRACE</text>
+    <text x="832" y="752" fill="#7ea0ff" font-size="13">event_demo</text>
+  </g>
+
+  <path d="M1028 418h128" fill="none" stroke="#1557ff" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="1092" y="397" text-anchor="middle" fill="#1557ff" font-family="Arial, sans-serif" font-size="12" font-weight="700">PRICE LOOKUP</text>
+  <path d="M1156 617h-128" fill="none" stroke="#77736b" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#arrowGray)"/>
+  <text x="1092" y="643" text-anchor="middle" fill="#77736b" font-family="Arial, sans-serif" font-size="12" font-weight="700">ERP RESULT</text>
+
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="1176" y="280" width="336" height="460" rx="28" fill="#fbfaf7" stroke="#d2d0c8"/>
+    <rect x="1176" y="280" width="336" height="78" rx="28" fill="#2f343c"/>
+    <path d="M1176 330h336v28h-336z" fill="#2f343c"/>
+    <text x="1210" y="328" fill="white" font-size="18" font-weight="700">Acumatica ERP</text>
+    <text x="1210" y="405" fill="#77736b" font-size="12" font-weight="700" letter-spacing="1.5">SYSTEM AUTHORITY</text>
+    <rect x="1210" y="426" width="268" height="70" rx="15" fill="#f1efe9"/>
+    <text x="1234" y="455" fill="#171717" font-size="14" font-weight="700">Customer class</text>
+    <text x="1454" y="455" text-anchor="end" fill="#1557ff" font-size="12" font-weight="700">CLASS–DEMO</text>
+    <text x="1234" y="477" fill="#77736b" font-size="12">Approved fictional value</text>
+    <rect x="1210" y="514" width="268" height="70" rx="15" fill="#f1efe9"/>
+    <text x="1234" y="543" fill="#171717" font-size="14" font-weight="700">Quantity rules</text>
+    <text x="1454" y="543" text-anchor="end" fill="#1557ff" font-size="12" font-weight="700">3 BREAKS</text>
+    <text x="1234" y="565" fill="#77736b" font-size="12">Precedence evaluated</text>
+    <rect x="1210" y="602" width="268" height="82" rx="15" fill="#171717"/>
+    <text x="1234" y="632" fill="#a8a7a2" font-size="11" font-weight="700">RETURNED PRICE</text>
+    <text x="1234" y="663" fill="white" font-size="22" font-weight="700">$124.00</text>
+    <text x="1454" y="659" text-anchor="end" fill="#7ea0ff" font-size="11" font-weight="700">ERP RULE</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="350" y="850" width="900" height="68" rx="34" fill="#fbfaf7" stroke="#d2d0c8"/>
+    <text x="388" y="892" fill="#77736b" font-size="13" font-weight="700">DESIGN QUESTIONS</text>
+    <text x="558" y="892" fill="#171717" font-size="13">Authority</text><circle cx="642" cy="887" r="4" fill="#1557ff"/>
+    <text x="674" y="892" fill="#171717" font-size="13">Latency</text><circle cx="742" cy="887" r="4" fill="#1557ff"/>
+    <text x="774" y="892" fill="#171717" font-size="13">Retries</text><circle cx="842" cy="887" r="4" fill="#1557ff"/>
+    <text x="874" y="892" fill="#171717" font-size="13">Stale data</text><circle cx="966" cy="887" r="4" fill="#1557ff"/>
+    <text x="998" y="892" fill="#171717" font-size="13">Fallbacks</text>
+  </g>
+  <text x="88" y="965" fill="#77736b" font-family="Arial, sans-serif" font-size="15">Privacy-safe placeholder • Replace via src/data/portfolio.ts • No real endpoints or identifiers shown</text>
+</svg>

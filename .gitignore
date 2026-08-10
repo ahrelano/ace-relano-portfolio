@@ -1,0 +1,45 @@
+# Dependencies
+/node_modules/
+
+# Next.js and generated output
+/.next/
+/out/
+
+# Tests and reports
+/coverage/
+/playwright-report/
+/test-results/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Vercel
+/.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local QA artifacts
+/screenshots/
+/artifacts/
+
+# Private source material (contains a phone number; do not commit)
+/Ace-Heart-Relano-Resume.docx

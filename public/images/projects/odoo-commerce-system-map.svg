@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual Odoo commerce and ERP system map</title>
+  <desc id="desc">Fictional interface showing pricing rules flowing through a configurable product, cart validation, and ERP sales order.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#101114" flood-opacity=".14"/></filter>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0v56" fill="none" stroke="#d9d7d0" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="#eeece6"/>
+  <rect width="1600" height="1000" fill="url(#grid)" opacity=".55"/>
+  <circle cx="1370" cy="110" r="280" fill="#1557ff" opacity=".08"/>
+  <text x="90" y="92" fill="#1557ff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">CONCEPTUAL SYSTEM MAP • FICTIONAL DATA</text>
+  <text x="90" y="150" fill="#171717" font-family="Georgia, serif" font-size="48" font-weight="700">One rule path, four system moments.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="220" width="1420" height="680" rx="32" fill="#fbfaf7" stroke="#d4d2cb"/>
+    <rect x="90" y="220" width="1420" height="82" rx="32" fill="#171717"/>
+    <path d="M90 270h1420v32H90z" fill="#171717"/>
+    <circle cx="138" cy="261" r="7" fill="#f3f0e9" opacity=".35"/>
+    <circle cx="164" cy="261" r="7" fill="#f3f0e9" opacity=".35"/>
+    <circle cx="190" cy="261" r="7" fill="#f3f0e9" opacity=".35"/>
+    <text x="235" y="270" fill="#f3f0e9" font-family="Arial, sans-serif" font-size="20" font-weight="700">Commerce rule workspace</text>
+    <rect x="1290" y="242" width="174" height="38" rx="19" fill="#1557ff"/>
+    <text x="1377" y="267" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="700">VALIDATION VIEW</text>
+  </g>
+
+  <g>
+    <text x="142" y="357" fill="#77736b" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">01 / PRICING</text>
+    <rect x="138" y="385" width="304" height="410" rx="22" fill="#f3f0e9" stroke="#d7d4cc"/>
+    <text x="171" y="430" fill="#171717" font-family="Arial, sans-serif" font-size="22" font-weight="700">Rule hierarchy</text>
+    <text x="171" y="459" fill="#6a675f" font-family="Arial, sans-serif" font-size="15">Precedence is explicit and testable.</text>
+    <g font-family="Arial, sans-serif">
+      <rect x="171" y="500" width="238" height="62" rx="14" fill="#171717"/>
+      <circle cx="199" cy="531" r="13" fill="#1557ff"/>
+      <text x="225" y="528" fill="white" font-size="14" font-weight="700">Customer rule</text>
+      <text x="225" y="548" fill="#c8c7c2" font-size="12">Priority 10</text>
+      <path d="M290 570v26" stroke="#9c9991" stroke-width="2"/>
+      <path d="m283 590 7 7 7-7" fill="none" stroke="#9c9991" stroke-width="2"/>
+      <rect x="171" y="604" width="238" height="62" rx="14" fill="#fff" stroke="#d4d2cb"/>
+      <circle cx="199" cy="635" r="13" fill="#dce5ff"/>
+      <text x="225" y="632" fill="#171717" font-size="14" font-weight="700">Quantity break</text>
+      <text x="225" y="652" fill="#77736b" font-size="12">Threshold evaluated</text>
+      <path d="M290 674v26" stroke="#9c9991" stroke-width="2"/>
+      <path d="m283 694 7 7 7-7" fill="none" stroke="#9c9991" stroke-width="2"/>
+      <rect x="171" y="708" width="238" height="54" rx="14" fill="#fff" stroke="#d4d2cb"/>
+      <circle cx="199" cy="735" r="13" fill="#e8e6df"/>
+      <text x="225" y="740" fill="#171717" font-size="14" font-weight="700">Base price</text>
+    </g>
+  </g>
+
+  <path d="M465 590h70" stroke="#1557ff" stroke-width="3"/>
+  <path d="m525 581 10 9-10 9" fill="none" stroke="#1557ff" stroke-width="3"/>
+
+  <g>
+    <text x="560" y="357" fill="#77736b" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">02 / CONFIGURE</text>
+    <rect x="554" y="385" width="360" height="410" rx="22" fill="#fff" stroke="#d7d4cc"/>
+    <rect x="579" y="410" width="310" height="138" rx="18" fill="#dfe6ff"/>
+    <path d="M682 451h104l31 61H651l31-61Z" fill="#1557ff" opacity=".88"/>
+    <path d="M707 440h54v20h-54z" fill="#171717"/>
+    <text x="579" y="592" fill="#171717" font-family="Arial, sans-serif" font-size="23" font-weight="700">Workshop Kit</text>
+    <text x="579" y="620" fill="#77736b" font-family="Arial, sans-serif" font-size="14">Alias: WK–CORE / Generic item</text>
+    <line x1="579" y1="650" x2="889" y2="650" stroke="#e0ded8"/>
+    <circle cx="594" cy="685" r="9" fill="#1557ff"/>
+    <text x="617" y="691" fill="#171717" font-family="Arial, sans-serif" font-size="15" font-weight="700">Required base selected</text>
+    <circle cx="594" cy="726" r="9" fill="#1557ff"/>
+    <text x="617" y="732" fill="#171717" font-family="Arial, sans-serif" font-size="15" font-weight="700">2 optional components</text>
+    <rect x="790" y="668" width="99" height="70" rx="16" fill="#171717"/>
+    <text x="839" y="695" text-anchor="middle" fill="#a8a6a0" font-family="Arial, sans-serif" font-size="11">TOTAL</text>
+    <text x="839" y="720" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="19" font-weight="700">$248</text>
+  </g>
+
+  <path d="M938 590h70" stroke="#1557ff" stroke-width="3"/>
+  <path d="m998 581 10 9-10 9" fill="none" stroke="#1557ff" stroke-width="3"/>
+
+  <g>
+    <text x="1033" y="357" fill="#77736b" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">03 / COMMIT</text>
+    <rect x="1027" y="385" width="426" height="410" rx="22" fill="#f3f0e9" stroke="#d7d4cc"/>
+    <text x="1060" y="430" fill="#171717" font-family="Arial, sans-serif" font-size="22" font-weight="700">Cross-system checkpoint</text>
+    <g font-family="Arial, sans-serif">
+      <rect x="1060" y="474" width="360" height="67" rx="14" fill="#fff" stroke="#d7d4cc"/>
+      <circle cx="1094" cy="507" r="18" fill="#dce5ff"/>
+      <path d="m1086 507 6 6 11-13" fill="none" stroke="#1557ff" stroke-width="3"/>
+      <text x="1128" y="505" fill="#171717" font-size="14" font-weight="700">Cart validation</text>
+      <text x="1128" y="524" fill="#77736b" font-size="12">Rule payload accepted</text>
+      <rect x="1060" y="558" width="360" height="67" rx="14" fill="#fff" stroke="#d7d4cc"/>
+      <circle cx="1094" cy="591" r="18" fill="#dce5ff"/>
+      <path d="m1086 591 6 6 11-13" fill="none" stroke="#1557ff" stroke-width="3"/>
+      <text x="1128" y="589" fill="#171717" font-size="14" font-weight="700">Inventory check</text>
+      <text x="1128" y="608" fill="#77736b" font-size="12">Components available</text>
+      <rect x="1060" y="642" width="360" height="104" rx="14" fill="#171717"/>
+      <text x="1086" y="676" fill="#a9a8a2" font-size="12" font-weight="700" letter-spacing="1.5">ERP SALES ORDER</text>
+      <text x="1086" y="708" fill="white" font-size="19" font-weight="700">SO–FICTIONAL–1048</text>
+      <rect x="1303" y="672" width="90" height="34" rx="17" fill="#1557ff"/>
+      <text x="1348" y="694" text-anchor="middle" fill="white" font-size="11" font-weight="700">CONSISTENT</text>
+    </g>
+  </g>
+
+  <text x="90" y="952" fill="#77736b" font-family="Arial, sans-serif" font-size="15">Privacy-safe placeholder • Replace via src/data/portfolio.ts • No client data shown</text>
+</svg>

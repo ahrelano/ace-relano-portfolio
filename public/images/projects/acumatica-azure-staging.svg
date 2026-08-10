@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual Acumatica Azure staging architecture</title>
+  <desc id="desc">Generic staging environment diagram with controlled access, an Azure virtual network, IIS and Acumatica, SQL Server, snapshot restoration, and test handoff.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="26" flood-color="#0f1115" flood-opacity=".15"/></filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0v42" fill="none" stroke="#d8d6cf" stroke-width="1"/></pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#1557ff"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="#eeece6"/>
+  <rect width="1600" height="1000" fill="url(#grid)" opacity=".6"/>
+  <text x="88" y="86" fill="#1557ff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">CONCEPTUAL STAGING ARCHITECTURE • GENERIC LABELS</text>
+  <text x="88" y="148" fill="#171717" font-family="Georgia, serif" font-size="48" font-weight="700">A controlled path from restore to handoff.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="320" y="220" width="1192" height="648" rx="36" fill="#fbfaf7" stroke="#cbc9c2" stroke-width="2"/>
+    <rect x="350" y="252" width="1132" height="586" rx="26" fill="#f1efe9" stroke="#d4d1c9" stroke-dasharray="10 8"/>
+    <text x="384" y="294" fill="#1557ff" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">AZURE VIRTUAL NETWORK / STAGING</text>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="88" y="354" width="188" height="238" rx="24" fill="#171717"/>
+    <circle cx="182" cy="418" r="38" fill="#1557ff"/>
+    <circle cx="182" cy="408" r="13" fill="white"/>
+    <path d="M156 452c6-19 19-28 26-28s20 9 26 28" fill="white"/>
+    <text x="182" y="500" text-anchor="middle" fill="white" font-size="16" font-weight="700">Approved tester</text>
+    <text x="182" y="527" text-anchor="middle" fill="#a9a9a5" font-size="12">Role-based access</text>
+    <rect x="120" y="548" width="124" height="28" rx="14" fill="#2b2c30"/>
+    <text x="182" y="566" text-anchor="middle" fill="#7ea0ff" font-size="10" font-weight="700">CONTROLLED ENTRY</text>
+  </g>
+
+  <path d="M276 474h104" stroke="#1557ff" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="328" y="454" text-anchor="middle" fill="#1557ff" font-family="Arial, sans-serif" font-size="11" font-weight="700">HTTPS</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="400" y="344" width="274" height="194" rx="22" fill="#fff" stroke="#d0cdc5"/>
+    <rect x="400" y="344" width="274" height="54" rx="22" fill="#1557ff"/>
+    <path d="M400 376h274v22H400z" fill="#1557ff"/>
+    <text x="428" y="378" fill="white" font-size="15" font-weight="700">Web / application VM</text>
+    <circle cx="442" cy="444" r="22" fill="#dfe7ff"/>
+    <text x="442" y="450" text-anchor="middle" fill="#1557ff" font-size="12" font-weight="700">IIS</text>
+    <text x="482" y="438" fill="#171717" font-size="14" font-weight="700">Acumatica 2022 R2</text>
+    <text x="482" y="460" fill="#77736b" font-size="12">Generic staging instance</text>
+    <line x1="428" y1="487" x2="646" y2="487" stroke="#e0ded8"/>
+    <text x="428" y="516" fill="#77736b" font-size="11">CUSTOMIZATION</text>
+    <text x="646" y="516" text-anchor="end" fill="#1557ff" font-size="11" font-weight="700">PUBLISHED</text>
+
+    <rect x="754" y="344" width="274" height="194" rx="22" fill="#fff" stroke="#d0cdc5"/>
+    <rect x="754" y="344" width="274" height="54" rx="22" fill="#2f343c"/>
+    <path d="M754 376h274v22H754z" fill="#2f343c"/>
+    <text x="782" y="378" fill="white" font-size="15" font-weight="700">Database service</text>
+    <ellipse cx="812" cy="437" rx="27" ry="10" fill="#dfe7ff"/>
+    <path d="M785 437v32c0 6 12 10 27 10s27-4 27-10v-32" fill="#dfe7ff" stroke="#1557ff"/>
+    <ellipse cx="812" cy="437" rx="27" ry="10" fill="none" stroke="#1557ff"/>
+    <text x="856" y="442" fill="#171717" font-size="14" font-weight="700">SQL Server</text>
+    <text x="856" y="464" fill="#77736b" font-size="12">Sanitized staging data</text>
+    <line x1="782" y1="487" x2="1000" y2="487" stroke="#e0ded8"/>
+    <text x="782" y="516" fill="#77736b" font-size="11">RESTORE CHECK</text>
+    <text x="1000" y="516" text-anchor="end" fill="#217a42" font-size="11" font-weight="700">VERIFIED</text>
+
+    <rect x="1108" y="344" width="322" height="194" rx="22" fill="#fff" stroke="#d0cdc5"/>
+    <text x="1136" y="382" fill="#77736b" font-size="11" font-weight="700" letter-spacing="1.5">ENVIRONMENT CONTROL</text>
+    <rect x="1136" y="408" width="266" height="44" rx="12" fill="#f1efe9"/>
+    <circle cx="1158" cy="430" r="8" fill="#217a42"/>
+    <text x="1178" y="435" fill="#171717" font-size="12" font-weight="700">Services healthy</text>
+    <rect x="1136" y="464" width="266" height="44" rx="12" fill="#f1efe9"/>
+    <circle cx="1158" cy="486" r="8" fill="#217a42"/>
+    <text x="1178" y="491" fill="#171717" font-size="12" font-weight="700">Access confirmed</text>
+  </g>
+
+  <path d="M674 440h80" stroke="#1557ff" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="714" y="420" text-anchor="middle" fill="#1557ff" font-family="Arial, sans-serif" font-size="11" font-weight="700">DATA</text>
+  <path d="M1028 440h80" stroke="#1557ff" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="1068" y="420" text-anchor="middle" fill="#1557ff" font-family="Arial, sans-serif" font-size="11" font-weight="700">CHECKS</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="400" y="618" width="274" height="164" rx="22" fill="#171717"/>
+    <text x="430" y="654" fill="#8eabff" font-size="11" font-weight="700" letter-spacing="1.5">01 / RESTORE</text>
+    <path d="M432 692h44v48h-44z" fill="#2e3035" stroke="#8eabff"/>
+    <path d="M442 681h44v48h-10" fill="#3b3d42" stroke="#8eabff"/>
+    <text x="506" y="700" fill="white" font-size="14" font-weight="700">Approved snapshot</text>
+    <text x="506" y="723" fill="#a8a8a4" font-size="12">Values kept private</text>
+
+    <rect x="754" y="618" width="274" height="164" rx="22" fill="#171717"/>
+    <text x="784" y="654" fill="#8eabff" font-size="11" font-weight="700" letter-spacing="1.5">02 / PUBLISH</text>
+    <circle cx="814" cy="708" r="29" fill="#1557ff"/>
+    <path d="M814 726v-38m0 0-13 13m13-13 13 13" fill="none" stroke="white" stroke-width="3"/>
+    <text x="858" y="700" fill="white" font-size="14" font-weight="700">Customization</text>
+    <text x="858" y="723" fill="#a8a8a4" font-size="12">Version aligned</text>
+
+    <rect x="1108" y="618" width="322" height="164" rx="22" fill="#1557ff"/>
+    <text x="1138" y="654" fill="#dce5ff" font-size="11" font-weight="700" letter-spacing="1.5">03 / HANDOFF</text>
+    <circle cx="1170" cy="708" r="29" fill="#fff" opacity=".18"/>
+    <path d="m1157 708 9 9 18-21" fill="none" stroke="white" stroke-width="4"/>
+    <text x="1214" y="700" fill="white" font-size="14" font-weight="700">Test access ready</text>
+    <text x="1214" y="723" fill="#dce5ff" font-size="12">Owners + checkpoints</text>
+  </g>
+
+  <path d="M537 538v80M891 538v80M1269 538v80" stroke="#9c9991" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#arrow)"/>
+  <text x="320" y="912" fill="#77736b" font-family="Arial, sans-serif" font-size="14">No hostnames</text><circle cx="424" cy="907" r="4" fill="#1557ff"/>
+  <text x="454" y="912" fill="#77736b" font-family="Arial, sans-serif" font-size="14">No credentials</text><circle cx="570" cy="907" r="4" fill="#1557ff"/>
+  <text x="600" y="912" fill="#77736b" font-family="Arial, sans-serif" font-size="14">No database names</text><circle cx="755" cy="907" r="4" fill="#1557ff"/>
+  <text x="785" y="912" fill="#77736b" font-family="Arial, sans-serif" font-size="14">No production data</text>
+  <text x="88" y="966" fill="#77736b" font-family="Arial, sans-serif" font-size="15">Privacy-safe placeholder • Replace via src/data/portfolio.ts • Environment details are intentionally generic</text>
+</svg>
