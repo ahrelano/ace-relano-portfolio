@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/contact-cta";
 import { ArrowRightIcon } from "@/components/icons";
 import { ProjectVisual } from "@/components/project-visual";
+import { ScreenshotGallery } from "@/components/screenshot-gallery";
 import { absoluteUrl, getProject, portfolio } from "@/data/portfolio";
 
 type CaseStudyPageProps = {
@@ -368,24 +369,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     document is synthetic.
                   </p>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h2 className="max-w-4xl font-display text-[clamp(2.8rem,6vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
                     The workflow, from storefront to invoice.
                   </h2>
-                  <div className="mt-12 grid gap-x-8 gap-y-12 lg:grid-cols-2">
-                    {project.gallery.map((visual) => (
-                      <div
-                        key={visual.src}
-                        className={
-                          visual.height > visual.width
-                            ? "mx-auto w-full max-w-[24rem]"
-                            : undefined
-                        }
-                      >
-                        <ProjectVisual visual={visual} />
-                      </div>
-                    ))}
-                  </div>
+                  <ScreenshotGallery visuals={project.gallery} />
                 </div>
               </div>
             </div>
