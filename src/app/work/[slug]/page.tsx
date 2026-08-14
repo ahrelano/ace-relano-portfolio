@@ -116,7 +116,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <h1 className="max-w-5xl font-display text-[clamp(3.3rem,9vw,8.4rem)] leading-[0.82] font-semibold tracking-[-0.055em] text-balance">
                 {project.title}
               </h1>
-              <p className="mt-8 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+              {project.subtitle ? (
+                <p className="mt-7 max-w-3xl text-lg leading-8 text-ink sm:text-xl sm:leading-9">
+                  {project.subtitle}
+                </p>
+              ) : null}
+              <p className="mt-4 max-w-3xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
                 {project.summary}
               </p>
             </div>
@@ -139,7 +144,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div className="grid gap-12">
               <div>
                 <h2 className="text-sm font-bold tracking-[0.12em] uppercase">
-                  Business problem
+                  The challenge
                 </h2>
                 <p className="mt-5 max-w-4xl font-display text-[clamp(2.3rem,4.5vw,4.6rem)] leading-[0.98] font-semibold tracking-[-0.04em] text-balance">
                   {project.businessProblem}
@@ -177,7 +182,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         <section className="page-shell section-pad">
           <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.64fr_1.36fr] lg:gap-16">
-            <p className="eyebrow">02 · Framing</p>
+            <p className="eyebrow">02 · The challenge</p>
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
                 <h2 className="font-display text-4xl leading-none font-semibold tracking-[-0.035em] sm:text-5xl">
@@ -222,7 +227,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <section className="bg-ink text-paper">
           <div className="page-shell section-pad">
             <div className="grid gap-8 border-t border-paper/20 pt-6 lg:grid-cols-[0.64fr_1.36fr] lg:gap-16">
-              <p className="eyebrow text-paper/55">03 · Decision trail</p>
+              <p className="eyebrow text-paper/55">
+                03 · Key technical decisions
+              </p>
               <div>
                 <h2 className="max-w-4xl font-display text-[clamp(2.8rem,6vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
                   Important choices, made visible.
@@ -252,8 +259,33 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         <section className="page-shell section-pad">
           <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.64fr_1.36fr] lg:gap-16">
-            <p className="eyebrow">04 · Delivery</p>
+            <p className="eyebrow">04 · What I built</p>
             <div>
+              {project.workflow ? (
+                <div className="mb-14">
+                  <h2 className="font-display text-4xl leading-none font-semibold tracking-[-0.035em] sm:text-5xl">
+                    End-to-end workflow
+                  </h2>
+                  <ol className="mt-8 grid gap-4 border-t border-ink/10 pt-5 md:grid-cols-3">
+                    {project.workflow.map((step, index) => (
+                      <li
+                        key={step.title}
+                        className="rounded-2xl border border-ink/10 bg-paper-raised p-6"
+                      >
+                        <span className="text-xs font-semibold text-accent">
+                          0{index + 1}
+                        </span>
+                        <h3 className="mt-7 text-base font-semibold tracking-[-0.025em]">
+                          {step.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-muted">
+                          {step.detail}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ) : null}
               <div className="grid gap-12 lg:grid-cols-2">
                 <div>
                   <h2 className="font-display text-4xl leading-none font-semibold tracking-[-0.035em] sm:text-5xl">
@@ -304,7 +336,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
               <div className="mt-12">
                 <h2 className="text-sm font-bold tracking-[0.12em] uppercase">
-                  Technology
+                  Tech stack
                 </h2>
                 <ul
                   className="mt-5 flex flex-wrap gap-2"
@@ -323,6 +355,42 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
           </div>
         </section>
+
+        {project.gallery ? (
+          <section className="border-t border-ink/10 bg-paper-raised">
+            <div className="page-shell section-pad">
+              <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.64fr_1.36fr] lg:gap-16">
+                <div>
+                  <p className="eyebrow">05 · Screenshot gallery</p>
+                  <p className="mt-5 max-w-xs text-sm leading-6 text-muted">
+                    Interface evidence from the independent Odoo 18 Community
+                    project. Every displayed product, customer, price, and
+                    document is synthetic.
+                  </p>
+                </div>
+                <div>
+                  <h2 className="max-w-4xl font-display text-[clamp(2.8rem,6vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
+                    The workflow, from storefront to invoice.
+                  </h2>
+                  <div className="mt-12 grid gap-x-8 gap-y-12 lg:grid-cols-2">
+                    {project.gallery.map((visual) => (
+                      <div
+                        key={visual.src}
+                        className={
+                          visual.height > visual.width
+                            ? "mx-auto w-full max-w-[24rem]"
+                            : undefined
+                        }
+                      >
+                        <ProjectVisual visual={visual} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <nav
           aria-label="Next case study"

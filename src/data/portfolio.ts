@@ -47,6 +47,11 @@ export type ProjectVisual = {
   height: number;
 };
 
+export type WorkflowStep = {
+  title: string;
+  detail: string;
+};
+
 export type CaseStudy = {
   slug: string;
   index: string;
@@ -54,6 +59,7 @@ export type CaseStudy = {
   shortTitle: string;
   eyebrow: string;
   stage: string;
+  subtitle?: string;
   summary: string;
   businessProblem: string;
   role: string;
@@ -66,6 +72,8 @@ export type CaseStudy = {
   outcome: string;
   technologies: readonly string[];
   visuals: readonly ProjectVisual[];
+  workflow?: readonly WorkflowStep[];
+  gallery?: readonly ProjectVisual[];
   featured: boolean;
 };
 
@@ -288,77 +296,178 @@ export const portfolio = {
     {
       slug: "odoo-18-ecommerce-erp-implementation",
       index: "01",
-      title: "Odoo 18 E-commerce and ERP Implementation",
-      shortTitle: "Odoo 18 commerce & ERP",
-      eyebrow: "ERP implementation",
-      stage: "Implementation · public status to confirm",
+      title: "Odoo 18 Commerce Platform",
+      shortTitle: "Odoo 18 commerce platform",
+      eyebrow: "Independent Odoo implementation",
+      stage: "Independent project · portfolio-safe demo",
+      subtitle:
+        "Configured kits, customer pricing, product aliases, and end-to-end order flow",
       summary:
-        "A commerce and ERP implementation centered on pricing hierarchy, product aliases, configurable kits, and consistency from storefront selection through sales order.",
+        "An independent Odoo 18 Community implementation demonstrating server-side price resolution, configurable kits, product aliases, and a consistent order flow using synthetic data only.",
       businessProblem:
-        "Complex product and pricing rules need to behave predictably across browsing, cart, quotation, inventory, and order workflows. A migration also has to preserve operational intent—not simply reproduce screens in a new system.",
-      role: "Developer and technical project lead responsible for translating business rules into a practical Odoo implementation plan, investigating platform behavior, and coordinating technical decisions.",
+        "Configure complex kits, customer pricing, aliases, and quantity discounts without losing pricing accuracy or order-line identity across the sales workflow.",
+      role: "Independent developer responsible for modeling the commerce rules, building the Odoo 18 Community implementation, and validating the handoff from shopper configuration to ERP documents.",
       responsibilities: [
-        "Map business rules for pricing, aliases, kits, inventory, and order creation.",
-        "Evaluate what belongs in configuration versus custom modules.",
-        "Coordinate implementation priorities, risks, and validation paths.",
+        "Model pricing, product aliases, configured kits, inventory consumption, and order-line identity.",
+        "Build and validate the website-to-ERP workflow with privacy-safe synthetic data.",
+        "Keep customer-facing configuration constrained to validated options and server-resolved prices.",
       ],
       constraints: [
-        "Pricing precedence must remain understandable when multiple rules can apply.",
-        "Storefront, cart, quotation, inventory, and sales-order behavior must agree.",
-        "Migration choices must balance maintainability with exact business requirements.",
+        "Pricing must stay authoritative when customer-specific rules, quantity discounts, kits, and add-ons interact.",
+        "Aliases need their own sellable SKUs and units of measure while consuming shared base inventory correctly.",
+        "The portal must reveal only intended kit data while rejecting invalid option access and client-supplied prices.",
       ],
       approach: [
-        "Model the commerce flow as one connected decision path instead of isolated screens.",
-        "Define rule ownership and precedence before extending platform behavior.",
-        "Use explicit validation scenarios for critical combinations and transitions.",
+        "Model the storefront, cart, quotation, sales order, delivery, and invoice as one connected workflow.",
+        "Resolve prices and validate configuration on the server instead of trusting browser state.",
+        "Use representative synthetic scenarios to test rule precedence, shared inventory, and document continuity.",
       ],
       decisions: [
         {
-          title: "Rules before interfaces",
+          title: "Server-side pricing authority",
           detail:
-            "Document pricing and product-selection rules first so storefront and ERP changes share the same source of truth.",
+            "The storefront requests a price, but Odoo evaluates the pricing hierarchy. Customer-specific rules and quantity discounts remain authoritative beyond the browser session.",
         },
         {
-          title: "Configuration before customization",
+          title: "Aliases share real inventory",
           detail:
-            "Use standard Odoo behavior where it meets the requirement, reserving custom modules for gaps that materially affect the workflow.",
+            "An alias can carry a separate SKU and selling unit while its fulfillment demand is translated back to the shared base item, preventing a second inventory truth.",
         },
         {
-          title: "End-to-end validation",
+          title: "Portal-safe kit projection",
           detail:
-            "Treat a correct storefront price as incomplete until the cart, inventory, quotation, and sales-order paths agree.",
+            "A portal-access regression was resolved with a narrowly scoped, validated projection of only the kit data intentionally exposed to shoppers.",
         },
       ],
       implementation: [
-        "Pricing hierarchy and quantity-discount behavior.",
-        "Product aliases and configurable product-kit workflows.",
-        "Consistency checks across storefront, cart, inventory, quotation, and sales order.",
-        "Automated-test planning around critical business rules.",
-        "ERP and e-commerce migration evaluation.",
+        "A server-side pricing hierarchy with customer-specific pricing and quantity discounts.",
+        "Product aliases with separate SKUs and selling units of measure that consume shared base inventory.",
+        "Fixed-price and component-sum configurable kits with required selections, substitutions, optional components, None selections, and priced add-ons.",
+        "Configured-kit identity preserved from the website cart through quotation, sales order, delivery, and invoice.",
+        "Validated option access and server-side price resolution for a portal-safe configuration experience.",
+      ],
+      workflow: [
+        {
+          title: "Configure in the storefront",
+          detail:
+            "A shopper selects a fixed-price or component-sum kit, including required choices, substitutions, optional components, None selections, and priced add-ons.",
+        },
+        {
+          title: "Resolve price and retain identity",
+          detail:
+            "Odoo validates the selected options and resolves the applicable price on the server before the configured kit moves into the cart and quotation flow.",
+        },
+        {
+          title: "Carry the kit into fulfillment",
+          detail:
+            "The configured identity is retained through the sales order, delivery, and invoice while aliases consume the correct shared base inventory.",
+        },
       ],
       validation: [
-        "Scenario-based checks for rule precedence and quantity thresholds.",
-        "Cross-workflow checks from product selection through order creation.",
-        "Regression coverage planning for custom-module behavior.",
+        "Fixed-price and component-sum kit scenarios resolve to $375 USD and $280 USD respectively in the synthetic demo.",
+        "Field Kit ×2 resolves to $712.50 after a 5% discount; Signal Cable Pack ×3 resolves to $256.50 after 5% while consuming 18 base units.",
+        "A complete synthetic demo order carries a $1,249 USD total from cart through the final documents.",
+        "Regression checks cover portal access, server-side option validation, price resolution, and configured-kit continuity.",
       ],
       outcome:
-        "The implementation status and any production outcomes require public confirmation. This case study intentionally documents the problem framing, solution direction, and validation discipline without claiming unapproved results.",
+        "A portfolio-safe Odoo 18 Commerce implementation that keeps price resolution server-side and carries each configured kit from the storefront through delivery and invoicing. All products, customers, prices, images, and order documents shown are synthetic.",
       technologies: [
         "Odoo 18 Community",
         "Python",
-        "JavaScript",
-        "PostgreSQL",
+        "PostgreSQL 15",
         "Docker",
-        "Automated testing",
+        "Git/GitHub",
       ],
       visuals: [
         {
-          src: "/images/projects/odoo-commerce-system-map.svg",
-          alt: "Conceptual system map showing pricing rules, a configurable product, cart validation, and an ERP sales order.",
+          src: "/images/projects/odoo18-commerce-platform/02-fixed-kit-configurator-desktop.webp",
+          alt: "Synthetic Odoo storefront showing a fixed-price configurable kit with validated component options.",
           caption:
-            "Conceptual system map using fictional interface data. Replace the asset path in the project data when a safe screenshot is approved.",
+            "Fixed-price kit configuration in the independent Odoo 18 Community demo. All product and price data is synthetic.",
           width: 1600,
           height: 1000,
+        },
+      ],
+      gallery: [
+        {
+          src: "/images/projects/odoo18-commerce-platform/01-storefront-desktop.webp",
+          alt: "Synthetic Odoo storefront displaying the available commerce products and kits.",
+          caption:
+            "Storefront overview with synthetic products, customers, and pricing.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/02-fixed-kit-configurator-desktop.webp",
+          alt: "Synthetic Odoo storefront showing a fixed-price configurable kit with validated component options.",
+          caption:
+            "Fixed-price kit configuration with required selections and priced add-ons.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/03-component-sum-configurator-desktop.webp",
+          alt: "Synthetic Odoo storefront showing a component-sum kit with its calculated configuration price.",
+          caption:
+            "Component-sum kit configuration, where the selected components determine the price.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/04-alias-pack-pricing-desktop.webp",
+          alt: "Synthetic Odoo product page showing alias-pack pricing and quantity-based pricing information.",
+          caption:
+            "Alias-pack pricing with a distinct selling SKU and unit of measure backed by shared inventory.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/05-cart-desktop.webp",
+          alt: "Synthetic Odoo cart showing configured commerce items before checkout.",
+          caption:
+            "Cart view retaining the configured-kit identity before quotation and order creation.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/06-sales-order-desktop.webp",
+          alt: "Synthetic Odoo sales order showing the configured-kit details after the storefront workflow.",
+          caption:
+            "Sales order showing the configured kit after server-side validation and price resolution.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/07-delivery-kit-overview-desktop.webp",
+          alt: "Synthetic Odoo delivery view showing the configured kit and its fulfillment components.",
+          caption:
+            "Delivery overview showing the fulfillment-side representation of the configured kit.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/08-invoice-desktop.webp",
+          alt: "Synthetic Odoo invoice showing a completed commerce order.",
+          caption:
+            "Invoice view completing the synthetic end-to-end order flow.",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/09-fixed-kit-configurator-mobile.webp",
+          alt: "Mobile synthetic Odoo storefront showing a fixed-price kit configurator.",
+          caption:
+            "Mobile fixed-price kit configuration, designed to keep component choices legible on a narrow screen.",
+          width: 390,
+          height: 844,
+        },
+        {
+          src: "/images/projects/odoo18-commerce-platform/10-cart-mobile.webp",
+          alt: "Mobile synthetic Odoo cart showing configured commerce items.",
+          caption:
+            "Mobile cart view retaining the configured-kit context before checkout.",
+          width: 390,
+          height: 844,
         },
       ],
       featured: true,
