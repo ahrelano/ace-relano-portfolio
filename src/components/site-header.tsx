@@ -22,7 +22,7 @@ function NavigationItems({ mobile = false }: { mobile?: boolean }) {
           title={portfolio.profile.resume.note}
         >
           {item.label}
-          <span className="sr-only"> — currently unavailable</span>
+          <span className="sr-only"> (currently unavailable)</span>
         </span>
       );
     }

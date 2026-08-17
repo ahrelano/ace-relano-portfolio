@@ -40,6 +40,13 @@ If the repository already uses a coherent equivalent stack, do not replace it me
 - Use generic client descriptions unless public naming has been explicitly approved.
 - If screenshots are missing, use tasteful local placeholder panels or diagrams, not unrelated stock photos.
 
+## Writing and punctuation
+
+- Do not use em dashes (`—`) in any user-visible website text, including headings, body copy, case studies, buttons, navigation labels, metadata, and image captions.
+- Write naturally instead: use a comma, colon, parentheses, or a new sentence, depending on the meaning.
+- Use a standard hyphen (`-`) only where grammatically correct, such as compound modifiers (`employer-focused`) or short UI labels. Do not use a hyphen as a generic substitute for an em dash in prose.
+- Before finishing a content-related task, search the portfolio source for em dashes and remove any that appear in user-visible text.
+
 ## Design principles
 
 - Premium editorial résumé aesthetic: warm off-white surfaces, near-black text, one restrained blue accent, strong typography, generous whitespace, thin borders, subtle shadows, and restrained motion.

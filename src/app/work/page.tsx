@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Case studies in Odoo, configurable product kits, BigCommerce–Acumatica integration, and Acumatica staging infrastructure.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Selected work — Ace Relano",
+    title: "Selected work: Ace Relano",
     description:
       "E-commerce, ERP, integration, and cloud-infrastructure case studies.",
     url: "/work",

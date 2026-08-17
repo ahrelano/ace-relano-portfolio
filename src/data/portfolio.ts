@@ -85,7 +85,7 @@ const resumeConfig: ResumeConfig = {
 
 export const portfolio = {
   site: {
-    name: "Ace Relano — E-commerce & ERP Developer",
+    name: "Ace Relano, E-commerce & ERP Developer",
     shortName: "Ace Relano",
     // NEEDS_USER_INPUT: Replace with the final Vercel or custom-domain URL after deployment.
     url: "https://ace-relano-portfolio.vercel.app",
@@ -101,7 +101,7 @@ export const portfolio = {
     headline:
       "I build and lead e-commerce systems involving complex pricing, configurable products, ERP integrations, and cloud infrastructure.",
     introduction:
-      "I work where storefront behavior, business rules, and operational systems meet—turning ambiguous requirements into practical, testable implementation plans.",
+      "I work where storefront behavior, business rules, and operational systems meet, turning ambiguous requirements into practical, testable implementation plans.",
     story:
       "My background spans software development, e-commerce delivery, visual design, and customer-facing problem solving. That mix helps me investigate technical detail without losing sight of the people and business processes the system needs to support.",
     location: "Pampanga, Philippines",
@@ -132,7 +132,7 @@ export const portfolio = {
       role: "Web Developer",
       organization: "Racetronix",
       location: "Remote · Ontario, Canada",
-      period: "Jan 2021 — Present",
+      period: "Jan 2021 to Present",
       summary:
         "Builds and maintains the company’s e-commerce experience while coordinating content, layout, testing, and day-to-day technical problem solving.",
       highlights: [
@@ -145,7 +145,7 @@ export const portfolio = {
       role: "Graphic Artist",
       organization: "CV Services Group (Shore 360)",
       location: "Pampanga, Philippines",
-      period: "Jun 2020 — Jan 2021",
+      period: "Jun 2020 to Jan 2021",
       summary:
         "Produced accurate sign visualizations and managed production-ready design assets.",
       highlights: [
@@ -157,7 +157,7 @@ export const portfolio = {
       role: "Graphic Artist",
       organization: "Office Beacon Philippines Inc",
       location: "Pampanga, Philippines",
-      period: "Apr 2018 — Jun 2020",
+      period: "Apr 2018 to Jun 2020",
       summary:
         "Created vector graphics and product mockups with an emphasis on visual consistency and organized delivery.",
       highlights: [
@@ -169,7 +169,7 @@ export const portfolio = {
       role: "Customer Service Representative",
       organization: "Sutherland",
       location: "Pampanga, Philippines",
-      period: "Oct 2017 — Apr 2018",
+      period: "Oct 2017 to Apr 2018",
       summary:
         "Supported Microsoft customers across phone and chat, combining troubleshooting with accurate transaction handling.",
       highlights: [
@@ -181,7 +181,7 @@ export const portfolio = {
       role: "Associate Software Engineer Trainee",
       organization: "Cloudstaff",
       location: "Pampanga, Philippines",
-      period: "Nov 2016 — Mar 2017",
+      period: "Nov 2016 to Mar 2017",
       summary:
         "Contributed code, testing, and cross-team coordination for an HR web application in an Agile workflow.",
       highlights: [
@@ -265,7 +265,7 @@ export const portfolio = {
     {
       title: "AI-assisted engineering",
       description:
-        "Responsible use of AI to support research and development—not replace judgment.",
+        "Responsible use of AI to support research and development, not replace judgment.",
       items: [
         "Advanced prompting",
         "RAG fundamentals",
@@ -280,14 +280,14 @@ export const portfolio = {
     {
       title: "Bachelor of Science in Information Technology",
       institution: "Don Honorio Ventura State University",
-      period: "2013 — 2017",
+      period: "2013 to 2017",
       description:
         "Foundation in software development, information systems, and technology practice.",
     },
     {
       title: "AI & Data Science Self-Directed Studies",
       institution: "Independent professional learning",
-      period: "Sep 2025 — Present",
+      period: "Sep 2025 to Present",
       description:
         "Python, data analysis, machine-learning foundations, prompt engineering, and retrieval-augmented generation concepts.",
     },

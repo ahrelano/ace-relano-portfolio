@@ -50,7 +50,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/work"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-ink hover:text-accent motion-reduce:transform-none"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-[#4ee5db] hover:text-paper motion-reduce:transform-none"
               >
                 Explore selected work
                 <ArrowRightIcon className="size-5" />
@@ -173,7 +173,7 @@ export default function HomePage() {
       >
         <SectionHeading
           eyebrow="Capabilities"
-          title="Grouped around the work—not a logo wall."
+          title="Grouped around the work, not a logo wall."
           description="A practical toolkit spanning storefronts, ERP workflows, integrations, infrastructure, testing, and technical coordination."
         />
         <div className="mt-16 grid border-t border-l border-ink/10 sm:grid-cols-2 lg:grid-cols-3">

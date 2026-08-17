@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { portfolio } from "@/data/portfolio";
 
 export const alt =
-  "Ace Relano — E-commerce and ERP Developer / Technical Project Lead";
+  "Ace Relano, E-commerce and ERP Developer / Technical Project Lead";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(portfolio.site.url),
   title: {
     default: portfolio.site.name,
-    template: `%s — ${portfolio.site.shortName}`,
+    template: `%s: ${portfolio.site.shortName}`,
   },
   description: portfolio.site.description,
   keywords: [...portfolio.seo.keywords],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Ace Relano — E-commerce and ERP Developer / Technical Project Lead",
+        alt: "Ace Relano, E-commerce and ERP Developer / Technical Project Lead",
       },
     ],
   },

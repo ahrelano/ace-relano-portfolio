@@ -37,7 +37,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/"
-              className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-ink hover:text-accent"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#4ee5db] hover:text-paper"
             >
               Return home <ArrowRightIcon className="size-5" />
             </Link>

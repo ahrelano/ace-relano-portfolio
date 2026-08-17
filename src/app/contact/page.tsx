@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="mt-20 grid gap-4 border-t border-ink/10 pt-6 md:grid-cols-2 lg:grid-cols-3">
           <a
             href={mailto}
-            className="group flex min-h-48 flex-col justify-between rounded-2xl bg-accent p-6 text-paper transition-transform hover:-translate-y-1 hover:bg-ink hover:text-accent motion-reduce:transform-none sm:p-7"
+            className="group flex min-h-48 flex-col justify-between rounded-2xl bg-accent p-6 text-paper transition-transform hover:-translate-y-1 hover:bg-[#4ee5db] hover:text-paper motion-reduce:transform-none sm:p-7"
           >
             <div className="flex items-center justify-between gap-4">
               <span className="text-xs font-semibold tracking-[0.14em] uppercase">
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
         <div className="mt-10 flex flex-col gap-4 border-t border-ink/10 py-6 text-xs leading-5 text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            No contact form, tracking script, or database—just direct contact.
+            No contact form, tracking script, or database, just direct contact.
           </p>
           <p>{portfolio.profile.location} · Remote collaboration</p>
         </div>

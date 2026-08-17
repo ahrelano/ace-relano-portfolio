@@ -24,7 +24,7 @@ export function ContactCta() {
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-ink hover:text-accent motion-reduce:transform-none"
+              className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-[#4ee5db] hover:text-paper motion-reduce:transform-none"
             >
               Get in touch
               <ArrowRightIcon className="size-5" />
