@@ -172,7 +172,12 @@ export default function AboutPage() {
                     </p>
                     <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs text-ink/75">
                       {group.items.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li
+                          key={item}
+                          className="rounded-full border border-ink/12 bg-white/45 px-3 py-1.5 text-xs font-medium"
+                        >
+                          {item}
+                        </li>
                       ))}
                     </ul>
                   </article>
@@ -187,27 +192,65 @@ export default function AboutPage() {
         <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
           <p className="eyebrow">Education & learning</p>
           <div>
-            {portfolio.learning.map((item) => (
-              <article
-                key={item.title}
-                className="grid gap-4 border-b border-ink/10 py-7 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8"
-              >
-                <div>
-                  <h2 className="font-display text-3xl leading-none font-semibold tracking-[-0.03em] sm:text-4xl">
-                    {item.title}
-                  </h2>
-                  <p className="mt-4 text-sm font-semibold">
-                    {item.institution}
+            {portfolio.learning
+              .filter((item) => !item.credentialUrl)
+              .map((item) => (
+                <article
+                  key={item.title}
+                  className="grid gap-4 border-b border-ink/10 py-7 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8"
+                >
+                  <div>
+                    <h2 className="font-display text-3xl leading-none font-semibold tracking-[-0.03em] sm:text-4xl">
+                      {item.title}
+                    </h2>
+                    <p className="mt-4 text-sm font-semibold">
+                      {item.institution}
+                    </p>
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
+                      {item.description}
+                    </p>
+                  </div>
+                  <p className="text-xs font-semibold text-accent sm:text-right">
+                    {item.period}
                   </p>
-                  <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-                    {item.description}
-                  </p>
-                </div>
-                <p className="text-xs font-semibold text-accent sm:text-right">
-                  {item.period}
-                </p>
-              </article>
-            ))}
+                </article>
+              ))}
+            <div className="mt-10">
+              <p className="eyebrow text-accent">Selected coursework</p>
+              {portfolio.learning
+                .filter((item) => item.credentialUrl)
+                .map((item) => (
+                  <article
+                    key={item.title}
+                    className="grid gap-4 border-b border-ink/10 py-7 sm:grid-cols-[1fr_auto] sm:gap-8"
+                  >
+                    <div>
+                      <h2 className="font-display text-3xl leading-none font-semibold tracking-[-0.03em] sm:text-4xl">
+                        {item.title}
+                      </h2>
+                      <p className="mt-4 text-sm font-semibold">
+                        {item.institution}
+                      </p>
+                      <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
+                        {item.description}
+                      </p>
+                      <a
+                        href={item.credentialUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent underline decoration-accent/35 underline-offset-4 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                      >
+                        View Udemy credential
+                        <span className="sr-only"> (opens in a new tab)</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </a>
+                    </div>
+                    <p className="text-xs font-semibold text-accent sm:text-right">
+                      {item.period}
+                    </p>
+                  </article>
+                ))}
+            </div>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/work"

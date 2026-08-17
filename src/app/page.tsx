@@ -224,21 +224,59 @@ export default function HomePage() {
             description="Formal information-technology education, strengthened by ongoing study in data and responsible AI-assisted engineering."
           />
           <div className="mt-16 grid gap-5 lg:grid-cols-2">
-            {portfolio.learning.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-ink/10 bg-paper p-7 sm:p-9"
-              >
-                <p className="eyebrow text-accent">{item.period}</p>
-                <h3 className="mt-6 max-w-xl font-display text-4xl leading-[0.95] font-semibold tracking-[-0.035em] sm:text-5xl">
-                  {item.title}
-                </h3>
-                <p className="mt-5 text-sm font-semibold">{item.institution}</p>
-                <p className="mt-4 max-w-xl text-sm leading-6 text-muted">
-                  {item.description}
-                </p>
-              </article>
-            ))}
+            {portfolio.learning
+              .filter((item) => !item.credentialUrl)
+              .map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-ink/10 bg-paper p-7 sm:p-9"
+                >
+                  <p className="eyebrow text-accent">{item.period}</p>
+                  <h3 className="mt-6 max-w-xl font-display text-4xl leading-[0.95] font-semibold tracking-[-0.035em] sm:text-5xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-5 text-sm font-semibold">
+                    {item.institution}
+                  </p>
+                  <p className="mt-4 max-w-xl text-sm leading-6 text-muted">
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+          </div>
+          <div className="mt-14">
+            <p className="eyebrow text-accent">Selected coursework</p>
+            <div className="mt-5 grid gap-5 lg:grid-cols-2">
+              {portfolio.learning
+                .filter((item) => item.credentialUrl)
+                .map((item) => (
+                  <article
+                    key={item.title}
+                    className="rounded-2xl border border-ink/10 bg-paper p-7 sm:p-9"
+                  >
+                    <p className="eyebrow text-accent">{item.period}</p>
+                    <h3 className="mt-6 max-w-xl font-display text-4xl leading-[0.95] font-semibold tracking-[-0.035em] sm:text-5xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-5 text-sm font-semibold">
+                      {item.institution}
+                    </p>
+                    <p className="mt-4 max-w-xl text-sm leading-6 text-muted">
+                      {item.description}
+                    </p>
+                    <a
+                      href={item.credentialUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent underline decoration-accent/35 underline-offset-4 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                    >
+                      View Udemy credential
+                      <span className="sr-only"> (opens in a new tab)</span>
+                      <ArrowUpRightIcon className="size-4" />
+                    </a>
+                  </article>
+                ))}
+            </div>
           </div>
           <a
             href={portfolio.socials[1].href}

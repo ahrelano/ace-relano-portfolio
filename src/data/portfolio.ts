@@ -35,6 +35,7 @@ export type LearningItem = {
   institution: string;
   period: string;
   description: string;
+  credentialUrl?: string;
 };
 
 export type ProjectVisual = {
@@ -81,19 +82,19 @@ const resumeConfig: ResumeConfig = {
 
 export const portfolio = {
   site: {
-    name: "Ace Relano, E-commerce & ERP Developer",
+    name: "Ace Relano | AI Engineer, E-commerce & ERP Developer",
     shortName: "Ace Relano",
     // NEEDS_USER_INPUT: Replace with the final Vercel or custom-domain URL after deployment.
     url: "https://ace-relano-portfolio.vercel.app",
     description:
-      "Portfolio of Ace Relano, an e-commerce and ERP developer and technical project lead working across configurable products, complex pricing, integrations, and cloud infrastructure.",
+      "Portfolio of Ace Relano, an AI engineer, e-commerce and ERP developer and technical project lead working across configurable products, complex pricing, integrations, cloud infrastructure, and AI-assisted engineering.",
     locale: "en_PH",
   },
   profile: {
     name: "Ace Heart Relano",
     displayName: "Ace Relano",
     initials: "AR",
-    role: "E-commerce & ERP Developer / Technical Project Lead",
+    role: "AI Engineer / E-commerce & ERP Developer / Technical Project Lead",
     headline:
       "I build and lead e-commerce systems involving complex pricing, configurable products, ERP integrations, and cloud infrastructure.",
     introduction:
@@ -108,7 +109,7 @@ export const portfolio = {
   navigation: [
     { label: "Work", href: "/work" },
     { label: "About", href: "/about" },
-    { label: "Résumé", href: null, resume: true },
+    { label: "Resume", href: null, resume: true },
     { label: "Contact", href: "/contact" },
   ] satisfies readonly NavItem[],
   socials: [
@@ -132,9 +133,10 @@ export const portfolio = {
       summary:
         "Builds and maintains the company’s e-commerce experience while coordinating content, layout, testing, and day-to-day technical problem solving.",
       highlights: [
-        "Moved and rebuilt the company website on BigCommerce.",
+        "Rebuilt the company website on BigCommerce.",
         "Writes HTML, CSS, and JavaScript to design and update web pages.",
         "Tests across devices and browsers, investigates bugs, and coordinates updates with other teams.",
+        "Coordinate technical investigations and testing for e-commerce and ERP initiatives, communicating risks, options, and findings to stakeholders.",
       ],
     },
     {
@@ -229,12 +231,12 @@ export const portfolio = {
     {
       title: "Integrations & APIs",
       description:
-        "Research and delivery for systems that need a reliable shared contract.",
+        "Integration research, API evaluation, and technical analysis for systems that need a reliable shared contract.",
       items: [
         "REST APIs",
-        "Webhooks",
+        "Webhook architecture evaluation",
         "JSON",
-        "Pricing synchronization",
+        "Pricing synchronization evaluation",
         "Customer classes",
         "Technical evaluation",
       ],
@@ -259,16 +261,16 @@ export const portfolio = {
       ],
     },
     {
-      title: "AI-assisted engineering",
+      title: "AI engineering foundations",
       description:
-        "Responsible use of AI to support research and development, not replace judgment.",
+        "Applied learning in LLM-assisted development, retrieval-augmented generation, and responsible human-reviewed workflows.",
       items: [
-        "Advanced prompting",
+        "Python",
+        "Prompt engineering",
         "RAG fundamentals",
-        "Frontier LLMs",
         "LangChain",
         "Chroma",
-        "Human review",
+        "Human-in-the-loop review",
       ],
     },
   ] satisfies readonly CapabilityGroup[],
@@ -276,16 +278,36 @@ export const portfolio = {
     {
       title: "Bachelor of Science in Information Technology",
       institution: "Don Honorio Ventura State University",
-      period: "2013 to 2017",
+      period: "2013 - 2017",
       description:
         "Foundation in software development, information systems, and technology practice.",
     },
     {
-      title: "AI & Data Science Self-Directed Studies",
-      institution: "Independent professional learning",
-      period: "Sep 2025 to Present",
+      title: "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents",
+      institution: "Udemy",
+      period: "Completed July 2026",
       description:
-        "Python, data analysis, machine-learning foundations, prompt engineering, and retrieval-augmented generation concepts.",
+        "Completed coursework covering LLM applications, retrieval-augmented generation, Hugging Face, LangChain, QLoRA fine-tuning, AI agents, and deployment-oriented AI projects.",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-5af0eb1b-4804-4dc8-b780-401815d18cf4/",
+    },
+    {
+      title: "The Data Analyst Course: Complete Data Analyst Bootcamp",
+      institution: "Udemy",
+      period: "Completed June 2026",
+      description:
+        "Completed coursework covering Python, NumPy, pandas, data collection, data cleaning, preprocessing, and data visualization.",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-f7a080c8-377c-4839-a318-28dfe9b5ead0/",
+    },
+    {
+      title: "The Complete ASP.NET MVC 5 Course",
+      institution: "Udemy",
+      period: "Completed December 2020",
+      description:
+        "Completed coursework covering ASP.NET MVC 5, C#, CRUD workflows, RESTful Web API, Entity Framework, validation, authentication, authorization, and web application deployment.",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-e0159d3c-aabf-417c-8607-03f04a851047/",
     },
   ] satisfies readonly LearningItem[],
   projects: [
@@ -469,99 +491,21 @@ export const portfolio = {
       featured: true,
     },
     {
-      slug: "configurable-kits-advanced-pricing",
-      index: "02",
-      title: "Configurable Kits and Advanced Pricing System",
-      shortTitle: "Configurable kits & pricing",
-      eyebrow: "Product systems",
-      stage: "System design & implementation · public status to confirm",
-      summary:
-        "A rule-driven kit builder designed to coordinate substitutions, optional components, pricing modes, inventory checks, cart editing, and downstream order data.",
-      businessProblem:
-        "Configurable kits behave like one product to the buyer but many dependent components to pricing, inventory, cart, and fulfillment systems. Small inconsistencies can create invalid combinations or mismatched order totals.",
-      role: "Developer and technical project lead defining the product model, decision rules, user flow, validation strategy, and ERP integration boundaries.",
-      responsibilities: [
-        "Translate required and optional component rules into a consistent configuration model.",
-        "Define pricing behavior for component-sum and fixed-price kits.",
-        "Plan safe cart-editing, inventory-validation, and order-integration paths.",
-      ],
-      constraints: [
-        "Required substitutions and optional components create interdependent choices.",
-        "Inventory can change between configuration and order placement.",
-        "Concurrent cart edits must not create stale or invalid configurations.",
-      ],
-      approach: [
-        "Separate configuration rules, price calculation, inventory validation, and persistence into explicit stages.",
-        "Revalidate at system boundaries instead of trusting earlier client-side state.",
-        "Preserve configuration details through cart edits, quotations, and sales orders.",
-      ],
-      decisions: [
-        {
-          title: "One canonical configuration",
-          detail:
-            "Represent the buyer’s choices in a structured payload that each downstream step can validate and interpret.",
-        },
-        {
-          title: "Pricing mode is explicit",
-          detail:
-            "Keep fixed kit pricing and component-sum pricing distinct so precedence and display rules remain auditable.",
-        },
-        {
-          title: "Validate late as well as early",
-          detail:
-            "Give fast feedback during configuration, then validate inventory and rule compatibility again before order creation.",
-        },
-      ],
-      implementation: [
-        "Required substitutions and optional-component selection.",
-        "Component-sum and fixed kit-pricing strategies.",
-        "Inventory validation and concurrency-aware state handling.",
-        "Cart editing with preserved configuration context.",
-        "Quotation and sales-order representation.",
-      ],
-      validation: [
-        "Valid, invalid, and boundary configuration scenarios.",
-        "Price recalculation checks for both pricing strategies.",
-        "Inventory-change and concurrent-edit test scenarios.",
-      ],
-      outcome:
-        "Production scope, deployment status, and measurable outcomes are awaiting public confirmation. The case study is limited to the approved functional scope and implementation reasoning.",
-      technologies: [
-        "Odoo 18 Community",
-        "Python",
-        "JavaScript",
-        "JSON",
-        "PostgreSQL",
-        "Automated testing",
-      ],
-      visuals: [
-        {
-          src: "/images/projects/configurable-kit-builder.svg",
-          alt: "Conceptual product configurator with required and optional components, pricing mode, and inventory validation.",
-          caption:
-            "Conceptual kit-builder interface with fictional products and values. The visual is a privacy-safe placeholder, not a production screenshot.",
-          width: 1600,
-          height: 1000,
-        },
-      ],
-      featured: true,
-    },
-    {
       slug: "bigcommerce-acumatica-integration",
-      index: "03",
-      title: "BigCommerce–Acumatica Integration",
-      shortTitle: "BigCommerce–Acumatica",
-      eyebrow: "Integration architecture",
-      stage: "Research & technical evaluation",
+      index: "02",
+      title: "BigCommerce and Acumatica Integration",
+      shortTitle: "BigCommerce and Acumatica",
+      eyebrow: "Integration evaluation",
+      stage: "Research and technical evaluation",
       summary:
-        "An integration evaluation for cart webhooks, customer-class pricing, quantity breaks, and the boundary between storefront responsiveness and ERP authority.",
+        "A technical evaluation of cart events, customer-class pricing, quantity breaks, and the boundary between storefront responsiveness and ERP authority.",
       businessProblem:
-        "The storefront needs timely pricing while the ERP holds customer and quantity-dependent rules. The integration must account for API limits, event timing, failures, and differences between the two systems’ pricing models.",
-      role: "Technical researcher and developer investigating platform APIs, webhook behavior, pricing responsibilities, and feasible synchronization patterns.",
+        "The storefront needs timely pricing while the ERP holds customer and quantity-dependent rules. Any integration approach must account for API limits, event timing, failures, and differences between the two systems' pricing models.",
+      role: "Technical researcher and project lead evaluating platform APIs, pricing responsibilities, webhook-based approaches, and feasible synchronization patterns.",
       responsibilities: [
         "Research BigCommerce and Acumatica API capabilities and constraints.",
         "Map customer-class and quantity-break requirements across both systems.",
-        "Explain architectural tradeoffs, failure modes, and evaluation findings.",
+        "Document architectural tradeoffs, failure modes, and evaluation findings.",
       ],
       constraints: [
         "Cart webhooks are event-driven and may not fit every synchronous pricing decision.",
@@ -571,7 +515,7 @@ export const portfolio = {
       approach: [
         "Start with an ownership map for customer, product, price, and order data.",
         "Evaluate synchronous lookup, scheduled synchronization, and hybrid patterns.",
-        "Use failure scenarios to test whether each option can degrade safely.",
+        "Use failure scenarios to assess whether each option can degrade safely.",
       ],
       decisions: [
         {
@@ -582,7 +526,7 @@ export const portfolio = {
         {
           title: "Separate event transport from price logic",
           detail:
-            "A webhook can signal change, but the pricing contract still needs deterministic inputs, precedence, and fallback behavior.",
+            "A webhook can signal a change, but the pricing contract still needs deterministic inputs, precedence, and fallback behavior.",
         },
         {
           title: "Design for replay",
@@ -591,30 +535,29 @@ export const portfolio = {
         },
       ],
       implementation: [
-        "Cart-webhook and pricing-synchronization architecture research.",
+        "Integration architecture and pricing-synchronization research.",
         "Customer-class and quantity-break requirement mapping.",
         "API capability and constraint analysis.",
         "Failure-mode, retry, and data-ownership evaluation.",
       ],
       validation: [
-        "Representative API request and response research.",
-        "Event-sequence walkthroughs for updates, retries, and stale data.",
-        "Feasibility review against required pricing scenarios.",
+        "Architecture walkthroughs using representative pricing and cart scenarios.",
+        "Event-sequence reviews for updates, retries, and stale-data risks.",
+        "Feasibility assessment against the required pricing scenarios.",
       ],
       outcome:
-        "This work is presented as research and technical evaluation. No production deployment or business impact is claimed; the public decision and implementation status still require confirmation.",
+        "This work represents research and technical evaluation. Middleware and webhook implementation were handled separately, and no production deployment or business impact is claimed.",
       technologies: [
         "BigCommerce",
         "Acumatica 2022 R2",
-        "REST APIs",
-        "Webhooks",
+        "REST API evaluation",
+        "Webhook architecture evaluation",
         "JSON",
-        "JavaScript",
       ],
       visuals: [
         {
           src: "/images/projects/bigcommerce-acumatica-flow.svg",
-          alt: "Conceptual integration architecture connecting a BigCommerce cart, integration layer, pricing rules, and Acumatica ERP.",
+          alt: "Conceptual integration architecture connecting a BigCommerce cart, an integration layer, pricing rules, and Acumatica ERP.",
           caption:
             "Conceptual integration flow with fictional events and identifiers. It illustrates system boundaries without exposing client infrastructure.",
           width: 1600,
@@ -625,11 +568,11 @@ export const portfolio = {
     },
     {
       slug: "acumatica-azure-staging-environment",
-      index: "04",
+      index: "03",
       title: "Acumatica Azure Staging Environment",
       shortTitle: "Acumatica Azure staging",
       eyebrow: "Cloud infrastructure",
-      stage: "Environment implementation · public status to confirm",
+      stage: "Staging environment implementation",
       summary:
         "A staging-environment workflow for Acumatica 2022 R2 covering Azure infrastructure, SQL Server, IIS, snapshot restoration, customization publishing, access, and handoff.",
       businessProblem:
@@ -679,14 +622,13 @@ export const portfolio = {
         "Customization publication and role-based handoff checks.",
       ],
       outcome:
-        "The public portfolio does not claim production use, completion, or performance results. Environment status and approved qualitative outcomes remain to be confirmed.",
+        "A controlled Acumatica 2022 R2 staging environment prepared for isolated testing, customization validation, and approved stakeholder access. This is not presented as a production deployment or performance benchmark.",
       technologies: [
         "Microsoft Azure",
         "Acumatica 2022 R2",
         "Windows Server",
         "SQL Server",
         "IIS",
-        "GitHub",
       ],
       visuals: [
         {
