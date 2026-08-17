@@ -41,15 +41,17 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mx-auto w-full max-w-[17rem] overflow-hidden rounded-3xl border border-accent/45 bg-paper-raised p-2 shadow-[0_18px_48px_rgba(0,0,0,0.42),0_0_24px_rgba(102,252,241,0.1)] sm:max-w-[19rem] lg:h-[32.5rem] lg:max-w-none lg:justify-self-end">
-              <div className="h-full overflow-hidden rounded-2xl">
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.25rem] lg:aspect-auto lg:h-full"
+                style={{ clipPath: "inset(0 round 1.25rem)" }}
+              >
                 <Image
                   src="/images/ace-hero-portrait-cyan.jpg"
                   alt="Ace Relano"
-                  width={1200}
-                  height={1500}
+                  fill
                   priority
                   sizes="(min-width: 1024px) 410px, (min-width: 640px) 19rem, 17rem"
-                  className="block h-auto w-full object-contain object-center lg:h-full lg:max-h-[31.5rem]"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
