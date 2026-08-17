@@ -128,8 +128,8 @@ The existing SVG files are explicitly labeled conceptual and use fictional data.
 The supplied source résumé contains a phone number and is excluded from Git by `.gitignore`. To enable the navigation item:
 
 1. Create a privacy-reviewed public PDF with all private details removed.
-2. Save it as `public/ace-relano-resume.pdf`.
-3. In `src/data/portfolio.ts`, set `profile.resume.available` to `true` and `profile.resume.href` to `/ace-relano-resume.pdf`.
+2. Set `profile.resume.href` in `src/data/portfolio.ts` to the approved public resume URL.
+3. Resume links in the header and About page use that single value and open it in a new tab.
 4. Test the automatically enabled download from the deployed site.
 
 ### Update the social sharing image

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ContactCta } from "@/components/contact-cta";
@@ -26,7 +27,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid items-end gap-10 py-12 lg:grid-cols-[1fr_auto] lg:gap-16">
+          <div className="grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.7fr)] lg:gap-16">
             <div>
               <p className="mb-5 text-sm font-semibold text-accent sm:mb-7 sm:text-base">
                 Ace Heart Relano
@@ -35,14 +36,20 @@ export default function HomePage() {
                 Commerce systems,
                 <span className="text-accent italic"> clearly led.</span>
               </h1>
-            </div>
-            <div className="flex items-end justify-between gap-7 lg:block lg:w-[23rem] lg:pb-2">
-              <p className="max-w-md text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              <p className="mt-8 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
                 {portfolio.profile.headline}
               </p>
-              <div className="hidden size-24 shrink-0 rotate-6 place-items-center rounded-full border border-ink/20 font-display text-3xl font-semibold sm:grid lg:mt-10 lg:size-32 lg:text-4xl">
-                AR
-              </div>
+            </div>
+            <div className="mx-auto w-full max-w-[20rem] overflow-hidden rounded-2xl border border-accent/45 bg-paper-raised p-2 shadow-[0_22px_60px_rgba(0,0,0,0.48),0_0_32px_rgba(102,252,241,0.12)] sm:max-w-[22rem] lg:max-w-none">
+              <Image
+                src="/images/ace-hero-portrait-cyan.jpg"
+                alt="Ace Relano"
+                width={1200}
+                height={1500}
+                priority
+                sizes="(min-width: 1024px) 36vw, (min-width: 640px) 22rem, min(20rem, calc(100vw - 2rem))"
+                className="h-auto w-full rounded-xl object-contain"
+              />
             </div>
           </div>
 

@@ -6,9 +6,7 @@ import { portfolio, type NavItem } from "@/data/portfolio";
 function NavigationItems({ mobile = false }: { mobile?: boolean }) {
   return portfolio.navigation.map((item: NavItem) => {
     const href = item.resume ? portfolio.profile.resume.href : item.href;
-    const disabled = item.resume
-      ? !portfolio.profile.resume.available || !href
-      : item.disabled || !href;
+    const disabled = item.disabled || !href;
     const className = mobile
       ? "border-b border-ink/15 py-4 text-xl font-medium tracking-[-0.03em] last:border-0"
       : "nav-link";
@@ -19,7 +17,6 @@ function NavigationItems({ mobile = false }: { mobile?: boolean }) {
           key={item.label}
           aria-disabled="true"
           className={`${className} cursor-not-allowed text-ink/35`}
-          title={portfolio.profile.resume.note}
         >
           {item.label}
           <span className="sr-only"> (currently unavailable)</span>
@@ -29,9 +26,16 @@ function NavigationItems({ mobile = false }: { mobile?: boolean }) {
 
     if (item.resume) {
       return (
-        <a key={item.label} href={href} download className={className}>
+        <a
+          key={item.label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Ace Relano's resume in a new tab"
+          className={className}
+        >
           {item.label}
-          <span className="sr-only"> (PDF download)</span>
+          <span className="sr-only"> (opens in a new tab)</span>
         </a>
       );
     }
@@ -80,9 +84,6 @@ export function SiteHeader() {
             <div className="flex flex-col">
               <NavigationItems mobile />
             </div>
-            <p className="mt-5 text-xs leading-5 text-muted">
-              {portfolio.profile.resume.note}
-            </p>
           </nav>
         </details>
       </div>

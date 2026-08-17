@@ -6,9 +6,7 @@ export type NavItem = {
 };
 
 export type ResumeConfig = {
-  available: boolean;
-  href: string | null;
-  note: string;
+  href: string;
 };
 
 export type SocialLink = {
@@ -78,9 +76,7 @@ export type CaseStudy = {
 };
 
 const resumeConfig: ResumeConfig = {
-  available: false,
-  href: null,
-  note: "Public résumé pending a privacy-reviewed file.",
+  href: "https://drive.google.com/file/d/1dhrTl5OclFpIHUdxNfGvzWNHyc_V8a4F/view",
 };
 
 export const portfolio = {

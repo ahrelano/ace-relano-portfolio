@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ContactCta } from "@/components/contact-cta";
-import { ArrowRightIcon } from "@/components/icons";
+import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/icons";
 import { portfolio } from "@/data/portfolio";
 
 export const metadata: Metadata = {
@@ -215,13 +215,15 @@ export default function AboutPage() {
               >
                 View selected work <ArrowRightIcon className="size-5" />
               </Link>
-              <span
-                aria-disabled="true"
-                title={portfolio.profile.resume.note}
-                className="inline-flex min-h-12 cursor-not-allowed items-center rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold text-ink/35"
+              <a
+                href={portfolio.profile.resume.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Ace Relano's resume in a new tab"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-ink/25 px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
               >
-                Résumé download pending
-              </span>
+                Open resume <ArrowUpRightIcon className="size-4" />
+              </a>
             </div>
           </div>
         </div>
