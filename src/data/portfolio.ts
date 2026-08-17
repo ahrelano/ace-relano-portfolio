@@ -132,7 +132,7 @@ export const portfolio = {
       role: "Web Developer",
       organization: "Racetronix",
       location: "Remote · Ontario, Canada",
-      period: "Jan 2021 to Present",
+      period: "Jan 2021 - Present",
       summary:
         "Builds and maintains the company’s e-commerce experience while coordinating content, layout, testing, and day-to-day technical problem solving.",
       highlights: [
@@ -145,7 +145,7 @@ export const portfolio = {
       role: "Graphic Artist",
       organization: "CV Services Group (Shore 360)",
       location: "Pampanga, Philippines",
-      period: "Jun 2020 to Jan 2021",
+      period: "Jun 2020 - Jan 2021",
       summary:
         "Produced accurate sign visualizations and managed production-ready design assets.",
       highlights: [
@@ -157,7 +157,7 @@ export const portfolio = {
       role: "Graphic Artist",
       organization: "Office Beacon Philippines Inc",
       location: "Pampanga, Philippines",
-      period: "Apr 2018 to Jun 2020",
+      period: "Apr 2018 - Jun 2020",
       summary:
         "Created vector graphics and product mockups with an emphasis on visual consistency and organized delivery.",
       highlights: [
@@ -169,7 +169,7 @@ export const portfolio = {
       role: "Customer Service Representative",
       organization: "Sutherland",
       location: "Pampanga, Philippines",
-      period: "Oct 2017 to Apr 2018",
+      period: "Oct 2017 - Apr 2018",
       summary:
         "Supported Microsoft customers across phone and chat, combining troubleshooting with accurate transaction handling.",
       highlights: [
@@ -181,7 +181,7 @@ export const portfolio = {
       role: "Associate Software Engineer Trainee",
       organization: "Cloudstaff",
       location: "Pampanga, Philippines",
-      period: "Nov 2016 to Mar 2017",
+      period: "Nov 2016 - Mar 2017",
       summary:
         "Contributed code, testing, and cross-team coordination for an HR web application in an Agile workflow.",
       highlights: [
