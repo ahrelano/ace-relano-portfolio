@@ -31,7 +31,7 @@ export default function HomePage() {
               <p className="mb-5 text-sm font-semibold text-accent sm:mb-7 sm:text-base">
                 Ace Heart Relano
               </p>
-              <h1 className="max-w-[12ch] font-display text-[clamp(4.35rem,12vw,11.5rem)] leading-[0.76] font-semibold tracking-[-0.065em] text-balance">
+              <h1 className="max-w-[11ch] font-display text-[clamp(3.5rem,7.5vw,5.5rem)] leading-[0.88] font-semibold tracking-[-0.06em] text-balance">
                 Commerce systems,
                 <span className="text-accent italic"> clearly led.</span>
               </h1>
@@ -50,14 +50,14 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/work"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 motion-reduce:transform-none"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-ink hover:text-accent motion-reduce:transform-none"
               >
                 Explore selected work
                 <ArrowRightIcon className="size-5" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold transition-colors hover:bg-white"
+                className="inline-flex min-h-12 items-center rounded-full border border-ink/25 px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
               >
                 Contact Ace
               </Link>
@@ -74,7 +74,7 @@ export default function HomePage() {
         <div className="page-shell section-pad grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <p className="eyebrow">Working perspective</p>
           <div>
-            <p className="max-w-4xl font-display text-[clamp(2.5rem,5.5vw,5.4rem)] leading-[0.95] font-semibold tracking-[-0.045em] text-balance">
+            <p className="max-w-4xl font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[0.98] font-semibold tracking-[-0.05em] text-balance">
               Business rules are the product. The interface is where people meet
               them.
             </p>
@@ -120,40 +120,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ink text-paper">
+      <section className="border-y border-ink/15 bg-paper-raised text-ink">
         <div className="page-shell section-pad">
-          <div className="grid gap-8 border-t border-paper/20 pt-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
-            <p className="eyebrow text-paper/55">Experience</p>
+          <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
+            <p className="eyebrow text-accent">Experience</p>
             <div>
-              <h2 className="max-w-3xl font-display text-[clamp(2.8rem,6vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
+              <h2 className="max-w-3xl font-display text-[clamp(2.4rem,4.5vw,3.5rem)] leading-[0.96] font-semibold tracking-[-0.05em] text-balance">
                 Built across code, design, operations, and support.
               </h2>
-              <p className="mt-7 max-w-2xl text-base leading-7 text-paper/62 sm:text-lg">
+              <p className="mt-7 max-w-2xl text-base leading-7 text-muted sm:text-lg">
                 A multidisciplinary path that supports both the technical depth
                 and communication required to lead implementation work.
               </p>
             </div>
           </div>
 
-          <ol className="mt-16 border-t border-paper/15">
+          <ol className="mt-16 border-t border-ink/15">
             {portfolio.experience.slice(0, 3).map((item, index) => (
               <li
                 key={`${item.organization}-${item.role}`}
-                className="grid gap-4 border-b border-paper/15 py-7 sm:grid-cols-[3rem_1fr_auto] sm:items-start sm:gap-7"
+                className="grid gap-4 border-b border-ink/15 py-7 sm:grid-cols-[3rem_1fr_auto] sm:items-start sm:gap-7"
               >
                 <span className="text-xs text-accent">0{index + 1}</span>
                 <div>
                   <h3 className="text-lg font-semibold tracking-[-0.025em]">
                     {item.role}
                   </h3>
-                  <p className="mt-1 text-sm text-paper/55">
-                    {item.organization}
-                  </p>
-                  <p className="mt-4 max-w-2xl text-sm leading-6 text-paper/62">
+                  <p className="mt-1 text-sm text-muted">{item.organization}</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
                     {item.summary}
                   </p>
                 </div>
-                <p className="text-xs text-paper/45 sm:text-right">
+                <p className="text-xs text-muted sm:text-right">
                   {item.period}
                 </p>
               </li>
@@ -161,7 +159,7 @@ export default function HomePage() {
           </ol>
           <Link
             href="/about"
-            className="mt-9 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-paper"
+            className="mt-9 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-accent"
           >
             Read the full career story
             <ArrowRightIcon className="size-5 text-accent" />

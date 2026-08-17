@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12">
           <p className="eyebrow">Contact</p>
           <div>
-            <h1 className="max-w-5xl font-display text-[clamp(4.2rem,11vw,10rem)] leading-[0.77] font-semibold tracking-[-0.065em] text-balance">
+            <h1 className="max-w-5xl font-display text-[clamp(3.5rem,7.5vw,5.5rem)] leading-[0.88] font-semibold tracking-[-0.06em] text-balance">
               Bring the hard
               <span className="text-accent italic"> system problem.</span>
             </h1>
@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="mt-20 grid gap-4 border-t border-ink/10 pt-6 md:grid-cols-2 lg:grid-cols-3">
           <a
             href={mailto}
-            className="group flex min-h-48 flex-col justify-between rounded-2xl bg-accent p-6 text-white transition-transform hover:-translate-y-1 motion-reduce:transform-none sm:p-7"
+            className="group flex min-h-48 flex-col justify-between rounded-2xl bg-accent p-6 text-paper transition-transform hover:-translate-y-1 hover:bg-ink hover:text-accent motion-reduce:transform-none sm:p-7"
           >
             <div className="flex items-center justify-between gap-4">
               <span className="text-xs font-semibold tracking-[0.14em] uppercase">
@@ -54,7 +54,7 @@ export default function ContactPage() {
               <span className="block text-sm font-semibold break-all sm:text-base">
                 {portfolio.profile.email}
               </span>
-              <span className="mt-2 block text-xs text-white/70">
+              <span className="mt-2 block text-xs text-paper/70">
                 Opens your email application
               </span>
             </div>
@@ -66,13 +66,13 @@ export default function ContactPage() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="group flex min-h-48 flex-col justify-between rounded-2xl border border-ink/10 bg-paper-raised p-6 transition-transform hover:-translate-y-1 motion-reduce:transform-none sm:p-7"
+              className="group flex min-h-48 flex-col justify-between rounded-2xl border border-ink/15 bg-paper-raised p-6 transition-transform hover:-translate-y-1 hover:border-accent motion-reduce:transform-none sm:p-7"
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="text-xs font-semibold tracking-[0.14em] uppercase">
                   {social.label}
                 </span>
-                <ArrowUpRightIcon className="size-5 text-accent" />
+                <ArrowUpRightIcon className="size-5 text-accent transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
               </div>
               <div>
                 <span className="block text-base font-semibold">

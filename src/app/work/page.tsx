@@ -24,7 +24,7 @@ export default function WorkPage() {
         <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12">
           <p className="eyebrow">Selected work · Four case studies</p>
           <div>
-            <h1 className="max-w-5xl font-display text-[clamp(4.5rem,12vw,11rem)] leading-[0.75] font-semibold tracking-[-0.065em] text-balance">
+            <h1 className="max-w-5xl font-display text-[clamp(3.5rem,7.5vw,5.5rem)] leading-[0.88] font-semibold tracking-[-0.06em] text-balance">
               Systems work,
               <span className="text-accent italic"> in context.</span>
             </h1>

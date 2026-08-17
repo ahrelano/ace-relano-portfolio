@@ -26,7 +26,7 @@ export default function NotFound() {
           </div>
         </div>
         <div>
-          <h1 className="max-w-4xl font-display text-[clamp(4rem,11vw,9rem)] leading-[0.77] font-semibold tracking-[-0.06em] text-balance">
+          <h1 className="max-w-4xl font-display text-[clamp(3.5rem,7.5vw,5.5rem)] leading-[0.88] font-semibold tracking-[-0.06em] text-balance">
             This path needs
             <span className="text-accent italic"> a new map.</span>
           </h1>
@@ -37,7 +37,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/"
-              className="inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-ink hover:text-accent"
             >
               Return home <ArrowRightIcon className="size-5" />
             </Link>

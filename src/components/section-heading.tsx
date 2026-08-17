@@ -13,9 +13,9 @@ export function SectionHeading({
 }) {
   return (
     <div className="grid gap-6 border-t border-ink/15 pt-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
-      <p className="eyebrow">{eyebrow}</p>
+      <p className="eyebrow text-accent">{eyebrow}</p>
       <div>
-        <h2 className="max-w-3xl font-display text-[clamp(2.6rem,6vw,5.4rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
+        <h2 className="max-w-3xl font-display text-[clamp(2.6rem,5.3vw,4.6rem)] leading-[0.94] font-semibold tracking-[-0.055em] text-balance">
           {title}
         </h2>
         {(description || action) && (

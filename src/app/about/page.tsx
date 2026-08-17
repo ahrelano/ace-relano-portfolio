@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12">
           <p className="eyebrow">About Ace</p>
           <div>
-            <h1 className="max-w-5xl font-display text-[clamp(4.2rem,11vw,10rem)] leading-[0.77] font-semibold tracking-[-0.065em] text-balance">
+            <h1 className="max-w-5xl font-display text-[clamp(3.5rem,7.5vw,5.5rem)] leading-[0.88] font-semibold tracking-[-0.06em] text-balance">
               Detail-minded.
               <span className="text-accent italic"> System-aware.</span>
               <br /> Business-grounded.
@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div>
             <h2
               id="experience-heading"
-              className="max-w-4xl font-display text-[clamp(3rem,6vw,6rem)] leading-[0.88] font-semibold tracking-[-0.05em] text-balance"
+              className="max-w-4xl font-display text-[clamp(2.5rem,4.5vw,3.5rem)] leading-[0.96] font-semibold tracking-[-0.05em] text-balance"
             >
               A career across technical delivery and visual craft.
             </h2>
@@ -152,25 +152,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ink text-paper">
+      <section className="border-y border-ink/15 bg-paper-raised text-ink">
         <div className="page-shell section-pad">
-          <div className="grid gap-8 border-t border-paper/20 pt-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
-            <p className="eyebrow text-paper/55">Capabilities</p>
+          <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
+            <p className="eyebrow text-accent">Capabilities</p>
             <div>
-              <h2 className="max-w-4xl font-display text-[clamp(3rem,6vw,6rem)] leading-[0.88] font-semibold tracking-[-0.05em] text-balance">
+              <h2 className="max-w-4xl font-display text-[clamp(2.5rem,4.5vw,3.5rem)] leading-[0.96] font-semibold tracking-[-0.05em] text-balance">
                 Breadth for the boundary work. Depth where it counts.
               </h2>
               <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
                 {portfolio.capabilities.map((group) => (
                   <article
                     key={group.title}
-                    className="border-t border-paper/15 pt-5"
+                    className="border-t border-ink/15 pt-5"
                   >
                     <h3 className="text-base font-semibold">{group.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-paper/55">
+                    <p className="mt-3 text-sm leading-6 text-muted">
                       {group.description}
                     </p>
-                    <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs text-paper/72">
+                    <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs text-ink/75">
                       {group.items.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -211,7 +211,7 @@ export default function AboutPage() {
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/work"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-ink hover:text-accent"
               >
                 View selected work <ArrowRightIcon className="size-5" />
               </Link>

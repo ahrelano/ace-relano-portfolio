@@ -169,7 +169,7 @@ export function ScreenshotGallery({
           <button
             type="button"
             onClick={() => moveBy(-1)}
-            className="inline-flex min-h-11 items-center rounded-full border border-ink/15 px-4 text-sm font-semibold transition-colors hover:bg-white focus-visible:outline-offset-2 motion-reduce:transition-none"
+            className="inline-flex min-h-11 items-center rounded-full border border-ink/20 px-4 text-sm font-semibold transition-colors hover:border-accent hover:text-accent focus-visible:outline-offset-2 motion-reduce:transition-none"
             aria-label="Show previous screenshot"
           >
             Previous
@@ -177,7 +177,7 @@ export function ScreenshotGallery({
           <button
             type="button"
             onClick={() => moveBy(1)}
-            className="inline-flex min-h-11 items-center rounded-full bg-ink px-4 text-sm font-semibold text-paper transition-colors hover:bg-ink/85 focus-visible:outline-offset-2 motion-reduce:transition-none"
+            className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-paper transition-colors hover:bg-ink hover:text-accent focus-visible:outline-offset-2 motion-reduce:transition-none"
             aria-label="Show next screenshot"
           >
             Next
@@ -194,7 +194,7 @@ export function ScreenshotGallery({
           onPointerCancel={() => {
             touchStartXRef.current = null;
           }}
-          className={`group relative block w-full overflow-hidden rounded-[1.15rem] border border-ink/10 bg-[#dfe3ea] shadow-[0_18px_50px_rgba(23,24,26,0.12)] focus-visible:outline-offset-4 sm:rounded-[1.5rem] ${
+          className={`group relative block w-full overflow-hidden rounded-[1.15rem] border border-ink/15 bg-[#15191d] shadow-[0_18px_50px_rgba(0,0,0,0.36)] focus-visible:outline-offset-4 sm:rounded-[1.5rem] ${
             isPortrait ? "mx-auto max-w-[27rem]" : ""
           }`}
           style={{
@@ -213,7 +213,7 @@ export function ScreenshotGallery({
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 78vw, 960px"
             className="size-full object-contain"
           />
-          <span className="absolute right-4 bottom-4 rounded-full bg-ink/90 px-3 py-2 text-xs font-semibold text-paper opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none">
+          <span className="absolute right-4 bottom-4 rounded-full bg-[#050607]/90 px-3 py-2 text-xs font-semibold text-ink opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none">
             View full screen
           </span>
         </button>
@@ -236,8 +236,8 @@ export function ScreenshotGallery({
                 onClick={() => setActiveIndex(index)}
                 className={`relative block w-28 overflow-hidden rounded-lg border bg-[#dfe3ea] focus-visible:outline-offset-3 sm:w-32 ${
                   isActive
-                    ? "border-accent ring-2 ring-accent ring-offset-2 ring-offset-paper-raised"
-                    : "border-ink/15 opacity-70 transition-opacity hover:opacity-100 motion-reduce:transition-none"
+                    ? "border-accent ring-2 ring-accent ring-offset-2 ring-offset-paper"
+                    : "border-ink/15 opacity-70 transition-opacity hover:border-accent hover:opacity-100 motion-reduce:transition-none"
                 }`}
                 style={{ aspectRatio: `${visual.width} / ${visual.height}` }}
                 aria-label={`Show screenshot ${index + 1}: ${visual.caption}`}
@@ -252,7 +252,7 @@ export function ScreenshotGallery({
                   sizes="128px"
                   className="size-full object-cover"
                 />
-                <span className="absolute top-2 left-2 rounded-full bg-ink/85 px-2 py-1 text-[0.65rem] font-bold text-paper">
+                <span className="absolute top-2 left-2 rounded-full bg-[#050607]/85 px-2 py-1 text-[0.65rem] font-bold text-ink">
                   {index + 1}
                 </span>
               </button>
@@ -265,7 +265,7 @@ export function ScreenshotGallery({
         ref={dialogRef}
         aria-labelledby="screenshot-lightbox-title"
         aria-modal="true"
-        className="fixed inset-0 z-[100] m-0 h-dvh max-h-none w-full max-w-none border-0 bg-ink/95 p-4 text-paper backdrop:bg-ink/55 sm:p-8"
+        className="fixed inset-0 z-[100] m-0 h-dvh max-h-none w-full max-w-none border-0 bg-[#050607]/95 p-4 text-ink backdrop:bg-[#050607]/55 sm:p-8"
         onCancel={(event) => {
           event.preventDefault();
           closeLightbox();
@@ -282,7 +282,7 @@ export function ScreenshotGallery({
               ref={closeButtonRef}
               type="button"
               onClick={closeLightbox}
-              className="inline-flex min-h-11 items-center rounded-full border border-paper/30 px-4 text-sm font-semibold transition-colors hover:bg-paper/10 focus-visible:outline-paper motion-reduce:transition-none"
+              className="inline-flex min-h-11 items-center rounded-full border border-ink/30 px-4 text-sm font-semibold transition-colors hover:border-accent hover:text-accent focus-visible:outline-accent motion-reduce:transition-none"
             >
               Close
             </button>
@@ -309,15 +309,15 @@ export function ScreenshotGallery({
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 border-t border-paper/20 pt-4 sm:flex-row sm:items-end sm:justify-between">
-            <p className="max-w-3xl text-sm leading-6 text-paper/75">
+          <div className="flex flex-col gap-4 border-t border-ink/20 pt-4 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-3xl text-sm leading-6 text-muted">
               {activeVisual.caption}
             </p>
             <div className="flex shrink-0 gap-2">
               <button
                 type="button"
                 onClick={() => moveBy(-1)}
-                className="inline-flex min-h-11 items-center rounded-full border border-paper/30 px-4 text-sm font-semibold transition-colors hover:bg-paper/10 focus-visible:outline-paper motion-reduce:transition-none"
+                className="inline-flex min-h-11 items-center rounded-full border border-ink/30 px-4 text-sm font-semibold transition-colors hover:border-accent hover:text-accent focus-visible:outline-accent motion-reduce:transition-none"
                 aria-label="Show previous screenshot"
               >
                 Previous
@@ -325,7 +325,7 @@ export function ScreenshotGallery({
               <button
                 type="button"
                 onClick={() => moveBy(1)}
-                className="inline-flex min-h-11 items-center rounded-full bg-paper px-4 text-sm font-semibold text-ink transition-colors hover:bg-paper/85 focus-visible:outline-paper motion-reduce:transition-none"
+                className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-paper transition-colors hover:bg-ink hover:text-accent focus-visible:outline-accent motion-reduce:transition-none"
                 aria-label="Show next screenshot"
               >
                 Next

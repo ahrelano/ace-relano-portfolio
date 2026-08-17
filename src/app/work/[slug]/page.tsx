@@ -114,7 +114,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </p>
             </div>
             <div className="min-w-0">
-              <h1 className="max-w-5xl font-display text-[clamp(3.3rem,9vw,8.4rem)] leading-[0.82] font-semibold tracking-[-0.055em] text-balance">
+              <h1 className="max-w-5xl font-display text-[clamp(3.2rem,7vw,5.5rem)] leading-[0.9] font-semibold tracking-[-0.06em] text-balance">
                 {project.title}
               </h1>
               {project.subtitle ? (
@@ -147,7 +147,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <h2 className="text-sm font-bold tracking-[0.12em] uppercase">
                   The challenge
                 </h2>
-                <p className="mt-5 max-w-4xl font-display text-[clamp(2.3rem,4.5vw,4.6rem)] leading-[0.98] font-semibold tracking-[-0.04em] text-balance">
+                <p className="mt-5 max-w-4xl font-display text-[clamp(2.1rem,4vw,3.5rem)] leading-[1] font-semibold tracking-[-0.05em] text-balance">
                   {project.businessProblem}
                 </p>
               </div>
@@ -225,21 +225,21 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </section>
 
-        <section className="bg-ink text-paper">
+        <section className="border-y border-ink/15 bg-paper-raised text-ink">
           <div className="page-shell section-pad">
-            <div className="grid gap-8 border-t border-paper/20 pt-6 lg:grid-cols-[0.64fr_1.36fr] lg:gap-16">
-              <p className="eyebrow text-paper/55">
+            <div className="grid gap-8 border-t border-ink/15 pt-6 lg:grid-cols-[0.64fr_1.36fr] lg:gap-16">
+              <p className="eyebrow text-accent">
                 03 · Key technical decisions
               </p>
               <div>
-                <h2 className="max-w-4xl font-display text-[clamp(2.8rem,6vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
+                <h2 className="max-w-4xl font-display text-[clamp(2.4rem,4.5vw,3.5rem)] leading-[0.96] font-semibold tracking-[-0.05em] text-balance">
                   Important choices, made visible.
                 </h2>
                 <div className="mt-12 grid gap-4 lg:grid-cols-3">
                   {project.decisions.map((decision, index) => (
                     <article
                       key={decision.title}
-                      className="rounded-2xl border border-paper/15 bg-paper/[0.04] p-6 sm:p-7"
+                      className="rounded-2xl border border-ink/15 bg-paper p-6 sm:p-7"
                     >
                       <span className="text-xs font-semibold text-accent">
                         0{index + 1}
@@ -247,7 +247,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       <h3 className="mt-8 text-lg font-semibold tracking-[-0.025em]">
                         {decision.title}
                       </h3>
-                      <p className="mt-4 text-sm leading-6 text-paper/62">
+                      <p className="mt-4 text-sm leading-6 text-muted">
                         {decision.detail}
                       </p>
                     </article>
@@ -370,7 +370,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   </p>
                 </div>
                 <div className="min-w-0">
-                  <h2 className="max-w-4xl font-display text-[clamp(2.8rem,6vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
+                  <h2 className="max-w-4xl font-display text-[clamp(2.4rem,4.5vw,3.5rem)] leading-[0.96] font-semibold tracking-[-0.05em] text-balance">
                     The workflow, from storefront to invoice.
                   </h2>
                   <ScreenshotGallery visuals={project.gallery} />
@@ -390,11 +390,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           >
             <div>
               <p className="eyebrow text-accent">Next case study</p>
-              <p className="mt-5 max-w-4xl font-display text-[clamp(2.6rem,6vw,5.6rem)] leading-[0.9] font-semibold tracking-[-0.045em] text-balance">
+              <p className="mt-5 max-w-4xl font-display text-[clamp(2.4rem,4.5vw,3.5rem)] leading-[0.96] font-semibold tracking-[-0.05em] text-balance">
                 {nextProject.title}
               </p>
             </div>
-            <span className="grid size-12 shrink-0 place-items-center rounded-full bg-ink text-paper transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none sm:size-16">
+            <span className="grid size-12 shrink-0 place-items-center rounded-full bg-accent text-paper transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none sm:size-16">
               <ArrowRightIcon className="size-5 sm:size-6" />
             </span>
           </Link>

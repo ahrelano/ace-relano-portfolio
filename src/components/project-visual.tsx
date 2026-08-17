@@ -12,7 +12,7 @@ export function ProjectVisual({
   return (
     <figure>
       <div
-        className="relative overflow-hidden rounded-[1.15rem] border border-ink/10 bg-[#dfe3ea] shadow-[0_18px_50px_rgba(23,24,26,0.12)] sm:rounded-[1.5rem]"
+        className="relative overflow-hidden rounded-[1.15rem] border border-ink/15 bg-[#15191d] shadow-[0_18px_50px_rgba(0,0,0,0.36)] sm:rounded-[1.5rem]"
         style={{ aspectRatio: `${visual.width} / ${visual.height}` }}
       >
         <Image

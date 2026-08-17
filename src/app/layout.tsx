@@ -1,24 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { absoluteUrl, portfolio } from "@/data/portfolio";
 
 import "./globals.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
-  display: "swap",
-  weight: ["500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(portfolio.site.url),
@@ -63,7 +49,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f3f0e9",
+  themeColor: "#0b0c10",
 };
 
 const personJsonLd = {
@@ -117,11 +103,11 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable}`}>
+    <html lang="en">
       <body className="antialiased">
         <a
           href="#main-content"
-          className="fixed top-3 left-3 z-[100] -translate-y-24 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper transition-transform focus:translate-y-0 motion-reduce:transition-none"
+          className="fixed top-3 left-3 z-[100] -translate-y-24 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-paper transition-transform focus:translate-y-0 motion-reduce:transition-none"
         >
           Skip to main content
         </a>
