@@ -211,7 +211,7 @@ export default function AboutPage() {
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/work"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#4ee5db] hover:text-paper"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-white hover:text-paper"
               >
                 View selected work <ArrowRightIcon className="size-5" />
               </Link>

@@ -177,7 +177,7 @@ export function ScreenshotGallery({
           <button
             type="button"
             onClick={() => moveBy(1)}
-            className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-paper transition-colors hover:bg-[#4ee5db] hover:text-paper focus-visible:outline-offset-2 motion-reduce:transition-none"
+            className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-paper transition-colors hover:bg-white hover:text-paper focus-visible:outline-offset-2 motion-reduce:transition-none"
             aria-label="Show next screenshot"
           >
             Next
@@ -325,7 +325,7 @@ export function ScreenshotGallery({
               <button
                 type="button"
                 onClick={() => moveBy(1)}
-                className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-paper transition-colors hover:bg-[#4ee5db] hover:text-paper focus-visible:outline-accent motion-reduce:transition-none"
+                className="inline-flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-paper transition-colors hover:bg-white hover:text-paper focus-visible:outline-accent motion-reduce:transition-none"
                 aria-label="Show next screenshot"
               >
                 Next
