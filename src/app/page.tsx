@@ -27,7 +27,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.7fr)] lg:gap-16">
+          <div className="grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_clamp(23.75rem,29vw,25.625rem)] lg:gap-16">
             <div>
               <p className="mb-5 text-sm font-semibold text-accent sm:mb-7 sm:text-base">
                 Ace Heart Relano
@@ -40,15 +40,15 @@ export default function HomePage() {
                 {portfolio.profile.headline}
               </p>
             </div>
-            <div className="mx-auto w-full max-w-[20rem] overflow-hidden rounded-2xl border border-accent/45 bg-paper-raised p-2 shadow-[0_22px_60px_rgba(0,0,0,0.48),0_0_32px_rgba(102,252,241,0.12)] sm:max-w-[22rem] lg:max-w-none">
+            <div className="mx-auto w-full max-w-[17rem] overflow-hidden rounded-2xl border border-accent/45 bg-paper-raised p-2 shadow-[0_18px_48px_rgba(0,0,0,0.42),0_0_24px_rgba(102,252,241,0.1)] sm:max-w-[19rem] lg:h-[32.5rem] lg:max-w-none lg:justify-self-end">
               <Image
                 src="/images/ace-hero-portrait-cyan.jpg"
                 alt="Ace Relano"
                 width={1200}
                 height={1500}
                 priority
-                sizes="(min-width: 1024px) 36vw, (min-width: 640px) 22rem, min(20rem, calc(100vw - 2rem))"
-                className="h-auto w-full rounded-xl object-contain"
+                sizes="(min-width: 1024px) 410px, (min-width: 640px) 19rem, 17rem"
+                className="h-auto w-full rounded-xl object-contain object-center lg:h-full lg:max-h-[31.5rem]"
               />
             </div>
           </div>
