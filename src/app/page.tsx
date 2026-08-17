@@ -49,7 +49,7 @@ export default function HomePage() {
                   height={1500}
                   priority
                   sizes="(min-width: 1024px) 410px, (min-width: 640px) 19rem, 17rem"
-                  className="block h-auto w-full object-contain object-center lg:h-full lg:max-h-[31.5rem]"
+                  className="block h-auto w-full rounded-[0.65rem] object-contain object-center lg:h-full lg:max-h-[31.5rem]"
                 />
               </div>
             </div>
