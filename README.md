@@ -2,7 +2,7 @@
 
 A production-ready editorial portfolio for Ace Relano, positioning him as an e-commerce and ERP developer and technical project lead. The site focuses on business problems, system decisions, implementation scope, validation, and honest project status rather than a technology-logo wall.
 
-The design is an original warm, typography-led system informed by premium résumé and editorial portfolio conventions. It does not reuse ResumeQ source code, copy, branding, illustrations, or template assets.
+The design is an original warm, typography-led system informed by premium résumé and editorial portfolio conventions. It does not reuse third-party source code, copy, branding, illustrations, or template assets.
 
 ## Technology stack
 
