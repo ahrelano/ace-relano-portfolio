@@ -14,7 +14,7 @@ The design is an original warm, typography-led system informed by premium résum
 - Static generation for all portfolio and case-study pages
 - npm with a committed `package-lock.json`
 
-There is no database, authentication, CMS, analytics, contact backend, or required environment variable. The project is compatible with GitHub and Vercel’s free Hobby plan.
+There is no database, authentication, CMS, analytics, or contact backend. The public Portfolio RAG Assistant requires one public endpoint setting and is otherwise self-contained. The project is compatible with GitHub and Vercel’s free Hobby plan.
 
 ## Architecture
 
@@ -39,6 +39,18 @@ CONTENT_NEEDED.md          # Facts and approvals still needed
 ```
 
 React Server Components are used by default. The mobile navigation uses native HTML `<details>` behavior, so no client component or menu JavaScript is required.
+
+## Portfolio RAG Assistant environment variable
+
+The assistant calls its separately deployed public RAG API directly from the browser. It has no API key in this repository and does not proxy, log, or store conversations on a server. Conversation history is kept only in the visitor's browser session.
+
+For Vercel Production and Preview, add this environment variable exactly:
+
+```text
+NEXT_PUBLIC_RAG_API_BASE_URL=https://ace-portfolio-rag-api.onrender.com
+```
+
+Copy `.env.example` to `.env.local` with the same value to test locally. Do not commit `.env.local`.
 
 ## Prerequisites
 
@@ -176,7 +188,12 @@ git push
 3. Under **Import Git Repository**, locate the portfolio repository and select **Import**.
 4. Keep **Framework Preset** set to **Next.js**.
 5. Keep the root directory as the repository root.
-6. Do not add environment variables; this implementation does not require any.
+6. Under **Environment Variables**, add this setting for both **Production** and **Preview**:
+
+   ```text
+   NEXT_PUBLIC_RAG_API_BASE_URL=https://ace-portfolio-rag-api.onrender.com
+   ```
+
 7. Select **Deploy**.
 8. After the build finishes, open the assigned `https://…vercel.app` address.
 9. Copy that exact URL into `portfolio.site.url` in `src/data/portfolio.ts`, commit the change, and push it.

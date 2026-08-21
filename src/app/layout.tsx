@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
+import { PortfolioChatAssistant } from "@/components/portfolio-chat-assistant";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { absoluteUrl, portfolio } from "@/data/portfolio";
@@ -114,6 +115,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <PortfolioChatAssistant />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd }}

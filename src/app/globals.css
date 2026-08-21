@@ -51,6 +51,12 @@ summary {
   outline-offset: 4px;
 }
 
+.chat-composer-input:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
 .page-shell {
   width: min(100%, var(--page-max));
   margin-inline: auto;
